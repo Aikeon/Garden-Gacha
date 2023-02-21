@@ -15,5 +15,5 @@ MonoBehaviour:
   vegPrefab: {fileID: 7003185597061953663, guid: e62dffaa9e7448545a8092a99ea1765f, type: 3}
   vegGrowthTime: 5
   mapType: 2
-  prodNumber: 2
+  prodNumber: 1
   basePrice: 1.25

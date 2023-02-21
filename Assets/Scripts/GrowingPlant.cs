@@ -1,6 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Animations;
 using UnityEngine;
+using UnityEngine.Formats.Alembic.Importer;
 
 public class GrowingPlant : MonoBehaviour
 {
@@ -10,8 +13,11 @@ public class GrowingPlant : MonoBehaviour
     public bool isMature = false;
     public int VeggiesToCollect;
 
+    private Animator _anim;
+    public GameObject vegetable;
+
     // Update is called once per frame
-    void Update()
+    /*void Update()
     {
         transform.localScale = Mathf.Min(1,(growthIndicator/data.vegGrowthTime)) * Vector3.one;
         growthIndicator += Time.deltaTime; // * multiplicateur du conteneur associé au vegetable
@@ -22,8 +28,22 @@ public class GrowingPlant : MonoBehaviour
                 isMature = true;
             }
         }
+    }*/
+    
+    private void OnEnable()
+    {
+        _anim = GetComponentInChildren<Animator>();
+        StartCoroutine(GrowthCoroutine());
     }
 
+    IEnumerator GrowthCoroutine()
+    {
+        _anim.CrossFade("Growth", 0.01f);
+        _anim.speed = 1 / data.vegGrowthTime;
+        yield return new WaitForSeconds(data.vegGrowthTime);
+        vegetable.SetActive(true);
+        _anim.gameObject.SetActive(false);
+    }
     void OnDestroy()
     {
         conteneur.RemoveVeggie(data);

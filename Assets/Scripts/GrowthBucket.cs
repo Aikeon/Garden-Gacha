@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GrowthBucket : MonoBehaviour
 {
+    public int maxVegetablesNumber = 2;
     public List<VegData> content;
     public float growthMult;
 
@@ -15,10 +16,10 @@ public class GrowthBucket : MonoBehaviour
 
     public void AddVeggie(VegData veg, Vector3 pos)
     {
+        if (content.Count >= maxVegetablesNumber) return;
         content.Add(veg);
         var newPlant = Instantiate(veg.vegPrefab, pos, Quaternion.identity);
         newPlant.GetComponent<GrowingPlant>().conteneur = this;
-        newPlant.transform.localScale = Vector3.zero;
         newPlant.SetActive(true);
     }
 
