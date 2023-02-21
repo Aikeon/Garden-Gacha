@@ -64,7 +64,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -3759900249646054615, guid: 9a53643c87ffc3148a29faf2973b9c1b, type: 3}
       propertyPath: currentTime
-      value: 12.458333
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2007282759456131436, guid: 9a53643c87ffc3148a29faf2973b9c1b, type: 3}
       propertyPath: m_Name

@@ -16,4 +16,4 @@ MonoBehaviour:
   vegGrowthTime: 5
   mapType: 2
   prodNumber: 1
-  basePrice: 1.25
+  basePrice: 0.5
