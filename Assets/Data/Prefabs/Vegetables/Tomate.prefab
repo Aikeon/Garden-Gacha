@@ -269,4 +269,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04dc553ba01721a448695c37d52ceb5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  soldExplosion: {fileID: 1740273048484840302, guid: 9b5e9ae87bdbc2e4da2b28e2922b1fa7, type: 3}
   origin: {fileID: 0}

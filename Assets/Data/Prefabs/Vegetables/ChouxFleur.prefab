@@ -65,7 +65,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: a88ecc23d60ab0d4f8ff10858b5ebc63, type: 3}
       propertyPath: m_Name
-      value: ChouxFleur (1)
+      value: ChouxFleur
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a88ecc23d60ab0d4f8ff10858b5ebc63, type: 3}
@@ -115,6 +115,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04dc553ba01721a448695c37d52ceb5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  soldExplosion: {fileID: 1740273048484840302, guid: 4fd6e67c7d25f6241ad3ae1ae6dcb618, type: 3}
   origin: {fileID: 0}
 --- !u!114 &7877198034800040052
 MonoBehaviour:

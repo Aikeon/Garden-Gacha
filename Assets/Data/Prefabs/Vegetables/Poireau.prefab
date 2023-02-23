@@ -67,6 +67,10 @@ PrefabInstance:
       propertyPath: origin
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 7203427248645526862, guid: 182f3345242c7144387565eedb409781, type: 3}
+      propertyPath: soldExplosion
+      value: 
+      objectReference: {fileID: 1740273048484840302, guid: 1a214792eff361649ad3f5e05119bd98, type: 3}
     - target: {fileID: 7740241483987520674, guid: 182f3345242c7144387565eedb409781, type: 3}
       propertyPath: m_Size.x
       value: 0.06661187
