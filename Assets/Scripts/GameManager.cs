@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
     public float money = 0;
+    public int month;
 
     void Awake()
     {
