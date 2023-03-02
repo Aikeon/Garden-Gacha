@@ -16,6 +16,10 @@ PrefabInstance:
       value: Ail
       objectReference: {fileID: 0}
     - target: {fileID: 3564435675359868462, guid: 182f3345242c7144387565eedb409781, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3564435675359868462, guid: 182f3345242c7144387565eedb409781, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}

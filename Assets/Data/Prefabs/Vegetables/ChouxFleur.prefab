@@ -67,6 +67,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChouxFleur
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a88ecc23d60ab0d4f8ff10858b5ebc63, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a88ecc23d60ab0d4f8ff10858b5ebc63, type: 3}
 --- !u!1 &3564435675359868462 stripped
@@ -159,7 +163,7 @@ MonoBehaviour:
   m_SelectEntered:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 7203427248645526862}
         m_TargetAssemblyTypeName: Vegetable, Assembly-CSharp
         m_MethodName: Collect
         m_Mode: 1
@@ -174,7 +178,7 @@ MonoBehaviour:
   m_SelectExited:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 7203427248645526862}
         m_TargetAssemblyTypeName: Vegetable, Assembly-CSharp
         m_MethodName: LoseGrip
         m_Mode: 1

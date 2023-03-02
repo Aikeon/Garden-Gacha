@@ -17,18 +17,18 @@ public class GrowingPlant : MonoBehaviour
     public GameObject vegetable;
 
     // Update is called once per frame
-    /*void Update()
+    void Update()
     {
-        transform.localScale = Mathf.Min(1,(growthIndicator/data.vegGrowthTime)) * Vector3.one;
+        //transform.localScale = Mathf.Min(1,(growthIndicator/data.vegGrowthTime)) * Vector3.one;
         growthIndicator += Time.deltaTime; // * multiplicateur du conteneur associé au vegetable
         if (growthIndicator > data.vegGrowthTime)
         {
-            for (int i = 0; i < data.prodNumber; i++)
-            {
+            //for (int i = 0; i < data.prodNumber; i++)
+            //{
                 isMature = true;
-            }
+            //}
         }
-    }*/
+    }
     
     private void OnEnable()
     {
