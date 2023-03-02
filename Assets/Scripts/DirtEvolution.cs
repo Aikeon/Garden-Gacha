@@ -10,9 +10,12 @@ public class DirtEvolution : MonoBehaviour
     [SerializeField] private Material soiledDirt;
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log(other.name);
+        
         if (other.TryGetComponent<Shovel>(out Shovel shovel))
         {
-            GetComponent<MeshRenderer>().material = soiledDirt;
+            Debug.Log("pelle");
+            GetComponent<MeshRenderer>().sharedMaterial = soiledDirt;
         }
     }
 }
