@@ -172,3 +172,6 @@ sysinfo.txt
 .ionide
 
 # End of https://www.toptal.com/developers/gitignore/api/unity,rider,visualstudiocode
+
+/Assets/UnityTechnologies/*.meta
+/Assets/GardenTools/*.meta
