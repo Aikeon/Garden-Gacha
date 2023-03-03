@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 //using UnityEditor.Animations;
 using UnityEngine;
+using Random = UnityEngine.Random;
+
 //using UnityEngine.Formats.Alembic.Importer;
 
 public class GrowingPlant : MonoBehaviour
@@ -11,10 +13,18 @@ public class GrowingPlant : MonoBehaviour
     private float growthIndicator = 0f;
     public VegData data;
     public bool isMature = false;
-    public int VeggiesToCollect;
+    public int veggiesToCollect;
 
     private Animator _anim;
     public GameObject vegetable;
+    
+    public List<Vegetable> potentialsVegetables;
+
+
+    private void Start()
+    {
+        _anim = GetComponentInChildren<Animator>();
+    }
 
     // Update is called once per frame
     void Update()
@@ -30,9 +40,14 @@ public class GrowingPlant : MonoBehaviour
         }
     }
     
-    private void OnEnable()
+    public void SetQuantity()
     {
-        _anim = GetComponentInChildren<Animator>();
+        print( data.mapType + " : " + VegData.VegMatrix[data.mapType][conteneur.FindOtherVeg(data)]);
+        veggiesToCollect = VegData.VegMatrix[data.mapType][conteneur.FindOtherVeg(data)];
+    }
+    
+    public void Grow()
+    {
         StartCoroutine(GrowthCoroutine());
     }
 
@@ -42,8 +57,37 @@ public class GrowingPlant : MonoBehaviour
         _anim.speed = 1 / data.vegGrowthTime;
         yield return new WaitForSeconds(data.vegGrowthTime);
         vegetable.SetActive(true);
+
+        ShowCollectablesVeggies();
+        
         _anim.gameObject.SetActive(false);
     }
+
+    private void ShowCollectablesVeggies()
+    {
+        print("veggies to collect = " + veggiesToCollect);
+        switch (veggiesToCollect)
+        {
+            case 3:
+                return;
+            
+            case 2:
+                int i = Random.Range(0, 3);
+                potentialsVegetables[i].gameObject.SetActive(false);
+                break;
+            
+            //veggiesToCollect == 1
+            default:
+                foreach (var veg in potentialsVegetables)
+                {
+                    veg.gameObject.SetActive(false);
+                }
+                int j = Random.Range(0, 3);
+                potentialsVegetables[j].gameObject.SetActive(true);
+                break;
+        }
+    }
+    
     void OnDestroy()
     {
         conteneur.RemoveVeggie(data);
@@ -51,8 +95,8 @@ public class GrowingPlant : MonoBehaviour
 
     public void CollectedChild()
     {
-        VeggiesToCollect--;
-        if (VeggiesToCollect == 0)
+        veggiesToCollect--;
+        if (veggiesToCollect == 0)
         {
             //TODO dying plant animation
             Destroy(gameObject);
@@ -61,6 +105,6 @@ public class GrowingPlant : MonoBehaviour
 
     public void SetNumberOfChildren(int nb)
     {
-        VeggiesToCollect = nb;
+        veggiesToCollect = nb;
     }
 }
