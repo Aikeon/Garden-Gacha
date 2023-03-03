@@ -14,11 +14,16 @@ public class WateringCan : MonoBehaviour
     private void Awake()
     {
         waterParticles.Stop();
+        waterParticles.gameObject.SetActive(false);
     }
 
     void Start()
     {
         _wateringCanTransform = GetComponent<Transform>();
+    }
+    void OnParticleCollision(GameObject other)
+    {
+        Debug.Log(other.name + this.name);
     }
 
     // Update is called once per frame
@@ -28,6 +33,7 @@ public class WateringCan : MonoBehaviour
         {
             if (!_isWatering)
             {
+                waterParticles.gameObject.SetActive(true);
                 waterParticles.Play();
                 _isWatering = true;
             }
@@ -37,6 +43,7 @@ public class WateringCan : MonoBehaviour
             if (_isWatering)
             {
                 waterParticles.Stop();
+                waterParticles.gameObject.SetActive(false);
                 _isWatering = false;
             }
         }

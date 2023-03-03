@@ -42,7 +42,6 @@ public class GrowingPlant : MonoBehaviour
     
     public void SetQuantity()
     {
-        print( data.mapType + " : " + VegData.VegMatrix[data.mapType][conteneur.FindOtherVeg(data)]);
         veggiesToCollect = VegData.VegMatrix[data.mapType][conteneur.FindOtherVeg(data)];
     }
     
@@ -65,7 +64,6 @@ public class GrowingPlant : MonoBehaviour
 
     private void ShowCollectablesVeggies()
     {
-        print("veggies to collect = " + veggiesToCollect);
         switch (veggiesToCollect)
         {
             case 3:

@@ -15,16 +15,10 @@ public class GrowthBucket : MonoBehaviour
         content = new List<VegData>();
     }
 
-    private void Update()
-    {
-        print(content.Count);
-    }
-
     public VegType FindOtherVeg(VegData vegData)
     {
         if (content.Count < 2)
         {
-            print("No other veg");
             return VegType.None;
         }
 
@@ -45,7 +39,7 @@ public class GrowthBucket : MonoBehaviour
     
     IEnumerator WaitOtherSeed(GrowingPlant newPlant)
     {
-        print("coroutine");
+        
         yield return new WaitForSeconds(5f);
         newPlant.SetQuantity();
         newPlant.Grow();
