@@ -5,6 +5,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class Vegetable : MonoBehaviour
 {
+    public ParticleSystem soldExplosion;
     public GrowingPlant origin;
     private XRGrabInteractable grabComponent;
     private Rigidbody rb;

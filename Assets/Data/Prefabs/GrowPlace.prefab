@@ -146,6 +146,7 @@ GameObject:
   - component: {fileID: 4097813834878089276}
   - component: {fileID: 4097813834878089277}
   - component: {fileID: 1187060425765935933}
+  - component: {fileID: 2285275188047940632}
   m_Layer: 0
   m_Name: Dirt
   m_TagString: Untagged
@@ -229,8 +230,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.9, y: 0.2, z: 0.9}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!114 &1187060425765935933
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -243,8 +244,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d14134d75a5834d49a805611b5fc43d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxVegetablesNumber: 2
   content: []
   growthMult: 1
+--- !u!114 &2285275188047940632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4097813834878089278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df7ab0cd31f62274894e5163b9ac214b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  solidDirt: {fileID: 2100000, guid: bdb0fd434d4b3ad44bd4e6e82625e939, type: 2}
+  soiledDirt: {fileID: 2100000, guid: 94045108ee262024280541e4190d116c, type: 2}
 --- !u!1 &4097813835570765688
 GameObject:
   m_ObjectHideFlags: 0

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4235167626778540176}
   - component: {fileID: 6588767984856164314}
   - component: {fileID: 3168472824592798525}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Tomate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -160,7 +160,7 @@ MonoBehaviour:
   m_SelectEntered:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 3168472824592798525}
         m_TargetAssemblyTypeName: Vegetable, Assembly-CSharp
         m_MethodName: Collect
         m_Mode: 1
@@ -175,7 +175,7 @@ MonoBehaviour:
   m_SelectExited:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 3168472824592798525}
         m_TargetAssemblyTypeName: Vegetable, Assembly-CSharp
         m_MethodName: LoseGrip
         m_Mode: 1
@@ -269,4 +269,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04dc553ba01721a448695c37d52ceb5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  soldExplosion: {fileID: 1740273048484840302, guid: 9b5e9ae87bdbc2e4da2b28e2922b1fa7, type: 3}
   origin: {fileID: 0}
