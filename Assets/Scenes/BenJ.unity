@@ -1550,6 +1550,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TestGraine (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 768904240872014485, guid: cd87d46adc7cbaf429486220e02314e6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 768904240872014504, guid: cd87d46adc7cbaf429486220e02314e6, type: 3}
       propertyPath: vegData
       value: 
@@ -1642,6 +1646,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   money: 0
+  month: 0
 --- !u!4 &1229165015
 Transform:
   m_ObjectHideFlags: 0
@@ -2091,6 +2096,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GrowPlace (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 4097813834582380560, guid: 2b5a789a759ddc24193640ca89e9a2ba, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4097813834582380575, guid: 2b5a789a759ddc24193640ca89e9a2ba, type: 3}
       propertyPath: m_RootOrder
       value: 12
@@ -2438,6 +2447,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TestGraine (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 768904240872014485, guid: cd87d46adc7cbaf429486220e02314e6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 768904240872014504, guid: cd87d46adc7cbaf429486220e02314e6, type: 3}
       propertyPath: vegData
       value: 
@@ -2510,6 +2523,10 @@ PrefabInstance:
     - target: {fileID: 768904240872014485, guid: cd87d46adc7cbaf429486220e02314e6, type: 3}
       propertyPath: m_Name
       value: TestGraine (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 768904240872014485, guid: cd87d46adc7cbaf429486220e02314e6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 768904240872014504, guid: cd87d46adc7cbaf429486220e02314e6, type: 3}
       propertyPath: vegData
@@ -2788,6 +2805,10 @@ PrefabInstance:
     - target: {fileID: 768904240872014485, guid: cd87d46adc7cbaf429486220e02314e6, type: 3}
       propertyPath: m_Name
       value: TestGraine (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 768904240872014485, guid: cd87d46adc7cbaf429486220e02314e6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 768904240872014504, guid: cd87d46adc7cbaf429486220e02314e6, type: 3}
       propertyPath: vegData
@@ -3735,6 +3756,10 @@ PrefabInstance:
     - target: {fileID: 4097813834582380560, guid: 2b5a789a759ddc24193640ca89e9a2ba, type: 3}
       propertyPath: m_Name
       value: GrowPlace
+      objectReference: {fileID: 0}
+    - target: {fileID: 4097813834582380560, guid: 2b5a789a759ddc24193640ca89e9a2ba, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4097813834582380575, guid: 2b5a789a759ddc24193640ca89e9a2ba, type: 3}
       propertyPath: m_RootOrder
