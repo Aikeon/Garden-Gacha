@@ -34,6 +34,7 @@ public class Booster : MonoBehaviour
     private bool purchased = false;
     public BoosterSpawner origin;
     private float price;
+    private XRGrabInteractable latestGrabbed;
     // Start is called before the first frame update
     void Start()
     {
@@ -58,8 +59,10 @@ public class Booster : MonoBehaviour
         right.enabled = (GameManager.Instance.money >= price) || purchased;
         leftVelocity = (left.transform.position - leftPrevPos) / Time.deltaTime;
         rightVelocity = (right.transform.position - rightPrevPos) / Time.deltaTime;
-        leftRb.isKinematic = rightGrabbed && attached;
-        rightRb.isKinematic = leftGrabbed && attached;
+        leftRb.isKinematic = (rightGrabbed || latestGrabbed == left) && attached;
+        rightRb.isKinematic = (leftGrabbed || latestGrabbed == right) && attached;
+        if (left.transform.parent == right) left.transform.localRotation = Quaternion.identity;
+        if (right.transform.parent == left) right.transform.localRotation = Quaternion.identity;
         if (attached)
         {
             if (leftGrabbed && rightGrabbed && Vector3.Dot(leftVelocity, rightVelocity) < -4f)
@@ -76,6 +79,7 @@ public class Booster : MonoBehaviour
 
     public void GrabLeft()
     {
+        latestGrabbed = left;
         if (!purchased)
         {
             purchased = true;
@@ -85,19 +89,29 @@ public class Booster : MonoBehaviour
         leftGrabbed = true;
         if (attached)
         {
-            right.transform.SetParent(left.transform);
             if (!rightGrabbed)
-            rightRb.MovePosition(left.transform.position + left.transform.right * leftRightDist);
+            {
+                right.transform.SetParent(left.transform);
+                rightRb.MovePosition(left.transform.position + left.transform.right * leftRightDist);
+            }
+            else 
+            {
+                right.transform.SetParent(null);
+                left.transform.SetParent(null);
+            }
         }
         
     }
     public void ReleaseLeft()
     {
+        if (rightGrabbed) latestGrabbed = right;
         if (attached) 
         {
             right.transform.SetParent(null);
-            left.transform.position = right.transform.position - left.transform.right.normalized * leftRightDist;
             left.transform.SetParent(right.transform);
+            left.transform.localPosition = - leftRightDist * Vector3.right / right.transform.localScale.x;
+            left.transform.localRotation = Quaternion.identity;
+            left.transform.localScale = Vector3.one;
         }
         leftGrabbed = false;
         if (!attached)
@@ -109,6 +123,7 @@ public class Booster : MonoBehaviour
 
     public void GrabRight()
     {
+        latestGrabbed = right;
         if (!purchased)
         {
             purchased = true;
@@ -118,18 +133,28 @@ public class Booster : MonoBehaviour
         rightGrabbed = true;
         if (attached)
         {
-            left.transform.SetParent(right.transform);
             if (!leftGrabbed)
-            leftRb.MovePosition(right.transform.position - right.transform.right * leftRightDist);
+            {
+                left.transform.SetParent(right.transform);
+                leftRb.MovePosition(right.transform.position - right.transform.right * leftRightDist);
+            }
+            else 
+            {
+                right.transform.SetParent(null);
+                left.transform.SetParent(null);
+            }
         }
     }
     public void ReleaseRight()
     {
+        if (leftGrabbed) latestGrabbed = left;
         if (attached) 
         {
             left.transform.SetParent(null);
-            right.transform.position = left.transform.position + right.transform.right.normalized * leftRightDist;
             right.transform.SetParent(left.transform);
+            right.transform.localPosition = leftRightDist * Vector3.right / left.transform.localScale.x;
+            right.transform.localRotation = Quaternion.identity;
+            right.transform.localScale = Vector3.one;
         }
         rightGrabbed = false;
         if (!attached)
@@ -159,7 +184,26 @@ public class Booster : MonoBehaviour
                 rd -= weights[(int)rarity,index];
                 index++;
             }
-            Instantiate(sachets[index], (left.transform.position + right.transform.position) / 2f, Quaternion.identity);
+            var sachet = Instantiate(sachets[index], (left.transform.position + right.transform.position) / 2f, Quaternion.identity);
+            sachet.GetComponent<Rigidbody>().AddForce(0.1f * Random.onUnitSphere, ForceMode.Impulse);
         }
+        StartCoroutine(DespawnGarbage());
+    }
+
+    IEnumerator DespawnGarbage()
+    {
+        var leftRend = left.GetComponent<Renderer>();
+        var rightRend = right.GetComponent<Renderer>();
+        var timeEllapsed = 0f;
+        while (timeEllapsed < 8f)
+        {
+            leftRend.material.color = new Color(leftRend.material.color.r, leftRend.material.color.g, leftRend.material.color.b, Mathf.Lerp(0,1,(8 - timeEllapsed)/3f));
+            rightRend.material.color = new Color(rightRend.material.color.r, rightRend.material.color.g, rightRend.material.color.b, Mathf.Lerp(0,1,(8 - timeEllapsed)/3f));
+            timeEllapsed += Time.deltaTime;
+            yield return null;
+        }
+        Destroy(left.gameObject);
+        Destroy(right.gameObject);
+        Destroy(gameObject);
     }
 }
