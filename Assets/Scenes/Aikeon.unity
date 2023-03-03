@@ -1568,7 +1568,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da8fdafc4dcc96d4babdfc36df3fe038, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  money: 0
+  money: 5
+  month: 0
 --- !u!4 &1229165015
 Transform:
   m_ObjectHideFlags: 0

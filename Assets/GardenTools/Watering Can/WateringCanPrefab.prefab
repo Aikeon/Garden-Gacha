@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3383434}
   - component: {fileID: 2365486}
   - component: {fileID: 6468442}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -109,7 +109,7 @@ GameObject:
   - component: {fileID: 479256}
   - component: {fileID: 5499732}
   - component: {fileID: 4689870354516636590}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WateringCanPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -275,7 +275,7 @@ GameObject:
   - component: {fileID: 7157171117111778163}
   - component: {fileID: 497409189937962111}
   - component: {fileID: 7192502940297511035}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Water_PS
   m_TagString: Untagged
   m_Icon: {fileID: 0}
