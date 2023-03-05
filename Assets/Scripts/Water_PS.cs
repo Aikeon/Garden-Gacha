@@ -1,37 +1,45 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class Water_PS : MonoBehaviour
 {
 
-    private GameObject _currentOther;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-    
+    // Are my particles colliding with something?
+    public bool particlesCurrentlyColliding = false;
+     
+    // When did particles start colliding ?
+    public float debutCollisionTime;
+     
+    // How long do we go without particle collision before saying we are not colliding ?
+    public float intervalleSansCollision = 0.2f;
+
+    // Particles start colliding with something
     void OnParticleCollision(GameObject other)
     {
-        
-        if (_currentOther != other)
+        // If the thing we collided with is tagged as "Arrosable"
+        if (other.CompareTag("Arrosable") )
         {
-            _currentOther = other;
-            Debug.Log("Fin");
-            Debug.Log("Debut");
-            Debug.Log("1 other " + other.name + " 2 this " + this.name);
-            
+            // Record / Overwrite the time the first particle collides with it
+            debutCollisionTime = Time.time;
+             
+            // Set our particles colliding flag to true
+            particlesCurrentlyColliding = true;
         }
-        else
-        {
-            Debug.Log("En cours");
-        }
+ 
     }
-
-    // Update is called once per frame
-    void Update()
+ 
+    // Every frame check if we have gone long enough without water particles colliding
+    public void FixedUpdate()
     {
-        
+        // If it's been long enough
+        if (particlesCurrentlyColliding && Time.time - debutCollisionTime >= intervalleSansCollision)
+        {
+            // Set our particles colliding flag to false
+            particlesCurrentlyColliding = false;
+
+        }
     }
 }

@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 4097813834878089274}
   - component: {fileID: 4097813834878089277}
   - component: {fileID: 1187060425765935933}
-  - component: {fileID: 2285275188047940632}
+  - component: {fileID: 717560945498143472}
   m_Layer: 0
   m_Name: Dirt
   m_TagString: Untagged
@@ -95,7 +95,7 @@ MonoBehaviour:
   maxVegetablesNumber: 2
   content: []
   growthMult: 1
---- !u!114 &2285275188047940632
+--- !u!114 &717560945498143472
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -104,11 +104,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 4097813834878089278}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df7ab0cd31f62274894e5163b9ac214b, type: 3}
+  m_Script: {fileID: 11500000, guid: efa301c6cbdc8b549812722e1ea97119, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  solidDirt: {fileID: 2100000, guid: bdb0fd434d4b3ad44bd4e6e82625e939, type: 2}
-  soiledDirt: {fileID: 2100000, guid: 94045108ee262024280541e4190d116c, type: 2}
+  particlesCollided: 0
+  particlesFirstCollisionTime: 0
+  particlesLastCollisionTime: 0
+  intervalleWithoutCollision: 0.2
 --- !u!1001 &2043385135472443732
 PrefabInstance:
   m_ObjectHideFlags: 0

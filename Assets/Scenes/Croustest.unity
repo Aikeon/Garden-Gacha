@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -196,23 +196,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd87d46adc7cbaf429486220e02314e6, type: 3}
---- !u!1 &190858779 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4243892527304435534, guid: 220c818457a8d2441bf84edb4edee095, type: 3}
-  m_PrefabInstance: {fileID: 2035482578}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &190858783
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 190858779}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: defe10768152d3442b821f32026be883, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &214095654
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2657,8 +2640,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8821647010644164899, guid: 220c818457a8d2441bf84edb4edee095, type: 3}
+      propertyPath: CollisionModule.maxKillSpeed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8821647010644164899, guid: 220c818457a8d2441bf84edb4edee095, type: 3}
       propertyPath: CollisionModule.m_Bounce.scalar
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8821647010644164899, guid: 220c818457a8d2441bf84edb4edee095, type: 3}
       propertyPath: CollisionModule.collisionMessages
