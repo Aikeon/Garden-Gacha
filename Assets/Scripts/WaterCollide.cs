@@ -35,7 +35,6 @@ public class WaterCollide : MonoBehaviour
         {
             // Record / Overwrite the time we just got hit with a water particle
             _particlesLastCollisionTime = Time.time;
-            Debug.Log("en cours de collision à " + _particlesLastCollisionTime );
         }
 
         
