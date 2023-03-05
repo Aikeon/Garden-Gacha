@@ -4,10 +4,20 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public static PlayerMovement Instance;
     [SerializeField] private float speed = 1.5f;
     Camera cam;
     Rigidbody rb;
     CapsuleCollider cc;
+
+    void Awake()
+    {
+        if (Instance != null)
+        {
+            Destroy(gameObject);
+        }
+        Instance = this;
+    }
     // Start is called before the first frame update
     void Start()
     {

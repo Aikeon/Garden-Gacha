@@ -77,6 +77,24 @@ public class Booster : MonoBehaviour
         rightPrevPos = right.transform.position;   
     }
 
+    public void Hover()
+    {
+        if (!purchased)
+        switch (rarity)
+        {
+            case Rarity.Bronze: TheGuyBehaviour.Instance.state = 1; break;
+            case Rarity.Silver: TheGuyBehaviour.Instance.state = 2; break;
+            case Rarity.Gold:
+            case Rarity.SHINY: TheGuyBehaviour.Instance.state = 3; break;
+        }
+    }
+
+    public void StopHover()
+    {
+        if (!purchased)
+        TheGuyBehaviour.Instance.state = 0;
+    }
+
     public void GrabLeft()
     {
         latestGrabbed = left;
@@ -84,6 +102,7 @@ public class Booster : MonoBehaviour
         {
             purchased = true;
             GameManager.Instance.money -= price;
+            TheGuyBehaviour.Instance.state = 0;
             origin.pickedBooster();
         }
         leftGrabbed = true;
@@ -128,6 +147,7 @@ public class Booster : MonoBehaviour
         {
             purchased = true;
             GameManager.Instance.money -= price;
+            TheGuyBehaviour.Instance.state = 0;
             origin.pickedBooster();
         }
         rightGrabbed = true;
