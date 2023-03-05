@@ -5,6 +5,8 @@ using UnityEngine.Serialization;
 
 public class WaterCollide : MonoBehaviour
 {
+    public float timeUnderWater;
+    
     // Have particles collided ?
     private bool _particlesCollided = false;
      
@@ -17,9 +19,10 @@ public class WaterCollide : MonoBehaviour
     // How long do we go without particle collision before saying we are not ?
     private const float IntervalleWithoutCollision = 0.3f;
 
+    
+    
 
     // we get hit with a particle
-    
     void OnParticleCollision(GameObject other)
     {
         if (_particlesCollided == false)
@@ -44,15 +47,18 @@ public class WaterCollide : MonoBehaviour
     // If so, we calculate time spent under water and decide if vegetables can grow
     public void FixedUpdate()
     {
+        timeUnderWater = _particlesLastCollisionTime - _particlesFirstCollisionTime;
+        Debug.Log("temps sous l'eau : " + timeUnderWater);
         
         // If it's been long enough
         if (_particlesCollided && (Time.time - _particlesLastCollisionTime > IntervalleWithoutCollision))
         {
             // Set our particles colliding flag to false, check if vegetables can grow
             _particlesCollided = false;
-            Debug.Log("fin de collision " + "temps passé : " + (_particlesLastCollisionTime - _particlesFirstCollisionTime));
-             
+            
+            
         }
         
+       
     }
 }

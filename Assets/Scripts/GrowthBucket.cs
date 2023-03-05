@@ -1,13 +1,19 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
+using Debug = UnityEngine.Debug;
 
 public class GrowthBucket : MonoBehaviour
 {
     public int maxVegetablesNumber = 2;
     public List<VegData> content;
     public float growthMult;
+
+    public float intervallePousse = 2f;
+    
+    [SerializeField] private WaterCollide _waterCollide;
 
     // Start is called before the first frame update
     void Start()
@@ -36,15 +42,21 @@ public class GrowthBucket : MonoBehaviour
 
         StartCoroutine(WaitOtherSeed(newPlant.GetComponent<GrowingPlant>()));
     }
-    
+
     IEnumerator WaitOtherSeed(GrowingPlant newPlant)
     {
-        
-        yield return new WaitForSeconds(5f);
+        while (_waterCollide.timeUnderWater < intervallePousse)
+        {
+            yield return null;
+        }
+
         newPlant.SetQuantity();
         newPlant.Grow();
+        Debug.Log("Pousse");
     }
+
     
+
     public void RemoveVeggie(VegData veg)
     {
         content.Remove(veg);

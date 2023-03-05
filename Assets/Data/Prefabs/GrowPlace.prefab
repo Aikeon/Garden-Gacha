@@ -95,6 +95,8 @@ MonoBehaviour:
   maxVegetablesNumber: 2
   content: []
   growthMult: 1
+  intervallePousse: 2
+  _waterCollide: {fileID: 717560945498143472}
 --- !u!114 &717560945498143472
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -107,10 +109,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efa301c6cbdc8b549812722e1ea97119, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  particlesCollided: 0
-  particlesFirstCollisionTime: 0
-  particlesLastCollisionTime: 0
-  intervalleWithoutCollision: 0.2
+  timeUnderWater: 0
+  _growthBucket: {fileID: 0}
 --- !u!1001 &2043385135472443732
 PrefabInstance:
   m_ObjectHideFlags: 0
