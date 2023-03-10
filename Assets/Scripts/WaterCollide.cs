@@ -5,7 +5,10 @@ using UnityEngine.Serialization;
 
 public class WaterCollide : MonoBehaviour
 {
+    // Time spent under water, refreshed in real time. If particles stop colliding, this value is added to totalTimeUnderWater and reset to 0
     public float timeUnderWater;
+
+    // Total time spent under water, refreshed only when particles stop colliding
     public float totalTimeUnderWater = 0f;
     
     // Have particles collided ?
@@ -45,7 +48,7 @@ public class WaterCollide : MonoBehaviour
     }
  
     // Every frame check if we have gone long enough without getting hit by water particles
-    // If so, we calculate time spent under water and decide if vegetables can grow
+    // If so, we calculate time spent under this "session d'arrosage" in timeUnderWater and add it to totalTimeUnderWater which counts all the "sessions d'arrosage".
     public void FixedUpdate()
     {
         timeUnderWater = _particlesLastCollisionTime - _particlesFirstCollisionTime;
@@ -56,7 +59,7 @@ public class WaterCollide : MonoBehaviour
             // Set our particles colliding flag to false, check if vegetables can grow
             _particlesCollided = false;
             totalTimeUnderWater += timeUnderWater;
-            Debug.Log("fin collision ! Nouveau temps total : " + totalTimeUnderWater + " ajout temps : " + timeUnderWater);
+            Debug.Log("fin collision ! Nouveau temps total : " + (totalTimeUnderWater) + " dont un ajout temps : " + timeUnderWater);
 
         }
         

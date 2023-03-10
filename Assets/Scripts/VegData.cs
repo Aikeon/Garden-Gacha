@@ -110,6 +110,7 @@ public class VegData : ScriptableObject
     
     public GameObject vegPrefab;
     public float vegGrowthTime;
+    public float vegWateringTime;
     public VegType mapType;
     public int prodNumber;
     public float basePrice;

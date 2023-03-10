@@ -45,14 +45,14 @@ public class GrowthBucket : MonoBehaviour
 
     IEnumerator WaitOtherSeed(GrowingPlant newPlant)
     {
-        while (_waterCollide.timeUnderWater + _waterCollide.totalTimeUnderWater < intervallePousse)
+        while (_waterCollide.timeUnderWater + _waterCollide.totalTimeUnderWater < newPlant.data.vegWateringTime)
         {
             yield return null;
         }
 
         newPlant.SetQuantity();
         newPlant.Grow();
-        Debug.Log("Pousse après " + intervallePousse + " secondes");
+        Debug.Log(newPlant +"Pousse après " + (_waterCollide.timeUnderWater + _waterCollide.totalTimeUnderWater) + " secondes");
     }
 
     
