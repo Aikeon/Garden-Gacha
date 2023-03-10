@@ -2616,52 +2616,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8821647010644164899, guid: 220c818457a8d2441bf84edb4edee095, type: 3}
-      propertyPath: CollisionModule.type
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8821647010644164899, guid: 220c818457a8d2441bf84edb4edee095, type: 3}
-      propertyPath: CollisionModule.enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8821647010644164899, guid: 220c818457a8d2441bf84edb4edee095, type: 3}
-      propertyPath: CollisionModule.quality
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8821647010644164899, guid: 220c818457a8d2441bf84edb4edee095, type: 3}
       propertyPath: ShapeModule.radius.value
       value: 0.06
-      objectReference: {fileID: 0}
-    - target: {fileID: 8821647010644164899, guid: 220c818457a8d2441bf84edb4edee095, type: 3}
-      propertyPath: CollisionModule.radiusScale
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8821647010644164899, guid: 220c818457a8d2441bf84edb4edee095, type: 3}
       propertyPath: ShapeModule.radiusThickness
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8821647010644164899, guid: 220c818457a8d2441bf84edb4edee095, type: 3}
-      propertyPath: CollisionModule.maxKillSpeed
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8821647010644164899, guid: 220c818457a8d2441bf84edb4edee095, type: 3}
-      propertyPath: CollisionModule.m_Bounce.scalar
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8821647010644164899, guid: 220c818457a8d2441bf84edb4edee095, type: 3}
-      propertyPath: CollisionModule.collisionMessages
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8821647010644164899, guid: 220c818457a8d2441bf84edb4edee095, type: 3}
       propertyPath: InitialModule.startLifetime.scalar
       value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8821647010644164899, guid: 220c818457a8d2441bf84edb4edee095, type: 3}
-      propertyPath: CollisionModule.m_Planes.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8821647010644164899, guid: 220c818457a8d2441bf84edb4edee095, type: 3}
-      propertyPath: CollisionModule.m_Planes.Array.data[0]
-      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1086090506273472059, guid: 220c818457a8d2441bf84edb4edee095, type: 3}
