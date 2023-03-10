@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 2aab1a9a6db2c0a46980a6c746a62f02
+guid: e4fd2b26be6d4344ca6912d83be62ddd
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
@@ -7,13 +7,13 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Material
-    second: {fileID: 2100000, guid: 01d81d2d01f1b9d4c9bdab4dd73a977b, type: 2}
+      name: Light
+    second: {fileID: 2100000, guid: 02099b0ce37cded4ebd9fa9c092c3a52, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Terre
-    second: {fileID: 2100000, guid: d455df547686f054795cc85a41929a29, type: 2}
+      name: Material
+    second: {fileID: 2100000, guid: b46774688e943c848b120ea2dfa378a8, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
