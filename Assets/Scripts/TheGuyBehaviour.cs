@@ -9,6 +9,8 @@ public class TheGuyBehaviour : MonoBehaviour
     private float v;
     private Vector3 bEA;
     private Animator anim;
+    private int latestState;
+    private string[] states = {"Idle", "Disappointed", "Okay", "Satisfied"};
     void Awake()
     {
         if (Instance != null)
@@ -38,5 +40,11 @@ public class TheGuyBehaviour : MonoBehaviour
         {
             transform.eulerAngles = Vector3.Lerp(transform.eulerAngles, bEA, 0.03f);
         }
+        if (latestState != state)
+        {
+            var info = anim.GetCurrentAnimatorStateInfo(0);
+            anim.CrossFade(states[state],0f, -1, normalizedTimeOffset: (state == 3 || latestState == 3) ? 0 : info.normalizedTime);
+        }
+        latestState = state;
     }
 }

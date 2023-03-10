@@ -1,9 +1,19 @@
 fileFormatVersion: 2
-guid: 2aab1a9a6db2c0a46980a6c746a62f02
+guid: 6a5b7bf1a03da6d429bfc48f16384973
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
   externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Brillant
+    second: {fileID: 2100000, guid: b46774688e943c848b120ea2dfa378a8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Fleche
+    second: {fileID: 2100000, guid: be91a2e6e1673614ebb7c676d5361595, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -12,8 +22,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Terre
-    second: {fileID: 2100000, guid: d455df547686f054795cc85a41929a29, type: 2}
+      name: MaterialMetal
+    second: {fileID: 2100000, guid: 8577cd229aca0ae44b73aba6b0d2de52, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
