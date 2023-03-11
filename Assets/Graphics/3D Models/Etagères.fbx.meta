@@ -1,14 +1,9 @@
 fileFormatVersion: 2
-guid: e4fd2b26be6d4344ca6912d83be62ddd
+guid: cfbad062fb88e2c469c9fd2b78624874
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
   externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Brillant
-    second: {fileID: 2100000, guid: b46774688e943c848b120ea2dfa378a8, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -17,18 +12,13 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Light
-    second: {fileID: 2100000, guid: 02099b0ce37cded4ebd9fa9c092c3a52, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
       name: Material
-    second: {fileID: 2100000, guid: b46774688e943c848b120ea2dfa378a8, type: 2}
+    second: {fileID: 2100000, guid: 01d81d2d01f1b9d4c9bdab4dd73a977b, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: MaterialMetal
-    second: {fileID: 2100000, guid: 8577cd229aca0ae44b73aba6b0d2de52, type: 2}
+      name: Sachet
+    second: {fileID: 2100000, guid: 2582f72cdadf29e4baa32c7f4dbab911, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

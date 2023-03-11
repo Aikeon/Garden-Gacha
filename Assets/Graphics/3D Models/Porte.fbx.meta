@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e4fd2b26be6d4344ca6912d83be62ddd
+guid: 5b430420b7bca6649bae140a8c3af84a
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
@@ -7,23 +7,13 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Brillant
-    second: {fileID: 2100000, guid: b46774688e943c848b120ea2dfa378a8, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Fleche
-    second: {fileID: 2100000, guid: be91a2e6e1673614ebb7c676d5361595, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
       name: Light
-    second: {fileID: 2100000, guid: 02099b0ce37cded4ebd9fa9c092c3a52, type: 2}
+    second: {fileID: 2100000, guid: 1332f55049867254a86bdb97019e41f9, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Material
-    second: {fileID: 2100000, guid: b46774688e943c848b120ea2dfa378a8, type: 2}
+    second: {fileID: 2100000, guid: 01d81d2d01f1b9d4c9bdab4dd73a977b, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
