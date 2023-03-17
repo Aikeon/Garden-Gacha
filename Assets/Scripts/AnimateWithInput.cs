@@ -16,6 +16,6 @@ public class AnimateWithInput : MonoBehaviour
     void Update()
     {
         trigger = gripAnimation.action.ReadValue<bool>();
-        handAnimator.SetFloat("Grip", trigger?0.6f:0f);
+//        handAnimator.SetFloat("Grip", trigger?0.6f:0f);
     }
 }
