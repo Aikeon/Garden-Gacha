@@ -95,7 +95,7 @@ MonoBehaviour:
   maxVegetablesNumber: 2
   content: []
   growthMult: 1
-  intervallePousse: 2
+  intervallePousse: 7
   _waterCollide: {fileID: 717560945498143472}
 --- !u!114 &717560945498143472
 MonoBehaviour:
@@ -110,7 +110,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeUnderWater: 0
-  _growthBucket: {fileID: 0}
+  totalTimeUnderWater: 0
 --- !u!1001 &2043385135472443732
 PrefabInstance:
   m_ObjectHideFlags: 0

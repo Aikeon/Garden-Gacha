@@ -12,7 +12,7 @@ public class GrowthBucket : MonoBehaviour
     public List<VegData> content;
     public float growthMult;
 
-    public float intervallePousse = 2f;
+    public float intervallePousse = 7f;
     
     [SerializeField] private WaterCollide _waterCollide;
     public int soiledDirtUsesRemaining;
@@ -54,14 +54,14 @@ public class GrowthBucket : MonoBehaviour
 
     IEnumerator WaitOtherSeed(GrowingPlant newPlant)
     {
-        while (_waterCollide.timeUnderWater < intervallePousse)
+        while (_waterCollide.timeUnderWater + _waterCollide.totalTimeUnderWater < newPlant.data.vegWateringTime)
         {
             yield return null;
         }
 
         newPlant.SetQuantity();
         newPlant.Grow();
-        Debug.Log("Pousse");
+        Debug.Log(newPlant +"Pousse après " + (_waterCollide.timeUnderWater + _waterCollide.totalTimeUnderWater) + " secondes");
     }
 
     

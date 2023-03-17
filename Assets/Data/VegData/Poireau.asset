@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vegPrefab: {fileID: 7703018549736264605, guid: 23ca4f1769943a6439a408b238ba3c55, type: 3}
   vegGrowthTime: 8
+  vegWateringTime: 10
   mapType: 6
   prodNumber: 1
   basePrice: 2
