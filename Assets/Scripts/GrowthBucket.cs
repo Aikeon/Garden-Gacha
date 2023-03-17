@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
+using Unity.VisualScripting;
 using UnityEngine;
 using Debug = UnityEngine.Debug;
 
@@ -14,6 +15,14 @@ public class GrowthBucket : MonoBehaviour
     public float intervallePousse = 7f;
     
     [SerializeField] private WaterCollide _waterCollide;
+    public int soiledDirtUsesRemaining;
+
+    [SerializeField] private int soiledDirtUsesPerSoil;
+    private bool _soiled;
+    private bool _watered;
+        
+    [SerializeField] private Material solidDirt;
+    [SerializeField] private Material soiledDirt;
 
     // Start is called before the first frame update
     void Start()
@@ -60,5 +69,33 @@ public class GrowthBucket : MonoBehaviour
     public void RemoveVeggie(VegData veg)
     {
         content.Remove(veg);
+    }
+
+    public void ShovelCollision()
+    {
+        _soiled = true;
+        soiledDirtUsesRemaining = soiledDirtUsesPerSoil;
+        UpdateTexture(true, _watered);
+    }
+
+    private void Update()
+    {
+        if ((soiledDirtUsesRemaining == 0) && _soiled)
+        {
+            _soiled = false;
+            UpdateTexture(false,_watered);
+        }
+    }
+
+    private void UpdateTexture(bool soiled, bool watered)
+    {
+        var meshRenderer = GetComponent<MeshRenderer>();
+        if (soiled)
+        {
+            meshRenderer.sharedMaterial = soiledDirt;
+            return;
+        }
+        meshRenderer.sharedMaterial = solidDirt;
+        // TODO : Gérer les autres états de la terre quand on les aura
     }
 }
