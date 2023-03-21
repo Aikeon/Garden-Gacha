@@ -97,6 +97,9 @@ MonoBehaviour:
   growthMult: 1
   intervallePousse: 7
   _waterCollide: {fileID: 717560945498143472}
+  soiledDirtUsesRemaining: 0
+  soiledDirtUsesPerSoil: 0
+  dirt: {fileID: 6570692531642769987}
 --- !u!114 &717560945498143472
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -183,5 +186,10 @@ PrefabInstance:
 --- !u!4 &2004443271960159935 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 2aab1a9a6db2c0a46980a6c746a62f02, type: 3}
+  m_PrefabInstance: {fileID: 2043385135472443732}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6570692531642769987 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5148817236446094103, guid: 2aab1a9a6db2c0a46980a6c746a62f02, type: 3}
   m_PrefabInstance: {fileID: 2043385135472443732}
   m_PrefabAsset: {fileID: 0}

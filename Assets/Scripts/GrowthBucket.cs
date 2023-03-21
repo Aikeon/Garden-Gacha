@@ -20,9 +20,7 @@ public class GrowthBucket : MonoBehaviour
     [SerializeField] private int soiledDirtUsesPerSoil;
     private bool _soiled;
     private bool _watered;
-        
-    [SerializeField] private Material solidDirt;
-    [SerializeField] private Material soiledDirt;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -75,7 +73,7 @@ public class GrowthBucket : MonoBehaviour
     {
         _soiled = true;
         soiledDirtUsesRemaining = soiledDirtUsesPerSoil;
-        UpdateTexture(true, _watered);
+
     }
 
     private void Update()
@@ -83,19 +81,8 @@ public class GrowthBucket : MonoBehaviour
         if ((soiledDirtUsesRemaining == 0) && _soiled)
         {
             _soiled = false;
-            UpdateTexture(false,_watered);
         }
     }
 
-    private void UpdateTexture(bool soiled, bool watered)
-    {
-        var meshRenderer = GetComponent<MeshRenderer>();
-        if (soiled)
-        {
-            meshRenderer.sharedMaterial = soiledDirt;
-            return;
-        }
-        meshRenderer.sharedMaterial = solidDirt;
-        // TODO : Gérer les autres états de la terre quand on les aura
-    }
+
 }

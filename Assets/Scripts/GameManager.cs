@@ -6,8 +6,8 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
     public float money = 0;
-    public int month = 1;
-    [SerializeField] private float monthDuration;
+    public int month = 0;
+    public float monthDuration;
     private float _monthTimer = 0f;
 
     void Awake()
@@ -25,15 +25,5 @@ public class GameManager : MonoBehaviour
     {
         
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        _monthTimer += Time.deltaTime;
-        if (_monthTimer > monthDuration)
-        {
-            _monthTimer = 0;
-            month = 1 + ((month) % 12);
-        }
-    }
+    
 }

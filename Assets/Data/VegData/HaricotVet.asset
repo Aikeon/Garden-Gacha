@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ceb68f853bebdd4288ae3b4b483afff, type: 3}
   m_Name: HaricotVet
   m_EditorClassIdentifier: 
-  vegPrefab: {fileID: 7003185597061953663, guid: e62dffaa9e7448545a8092a99ea1765f, type: 3}
+  vegPrefab: {fileID: 7703018549736264605, guid: 27e5224c20db78c4480ec0edb58af3a1, type: 3}
   vegGrowthTime: 5
   vegWateringTime: 8
   mapType: 3

@@ -47,6 +47,7 @@ public class GrowingPlant : MonoBehaviour
     
     public void Grow()
     {
+        _anim.gameObject.GetComponent<Renderer>().enabled = true;
         StartCoroutine(GrowthCoroutine());
     }
 
