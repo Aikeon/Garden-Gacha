@@ -27,6 +27,8 @@ public class Booster : MonoBehaviour
     private Rigidbody rightRb;
     private Vector3 rightVelocity;
     private Vector3 rightPrevPos;
+    [SerializeField] private GameObject middle;
+    private Vector3 middleBaseScale;
     private float leftRightDist;
     private bool leftGrabbed = false;
     private bool rightGrabbed = false;
@@ -38,6 +40,7 @@ public class Booster : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        middleBaseScale = middle.transform.localScale;
         leftRightDist = Vector3.Distance(right.transform.position,left.transform.position);
         leftPrevPos = left.transform.position;
         rightPrevPos = right.transform.position;
@@ -61,6 +64,9 @@ public class Booster : MonoBehaviour
         rightVelocity = (right.transform.position - rightPrevPos) / Time.deltaTime;
         leftRb.isKinematic = (rightGrabbed || latestGrabbed == left) && attached;
         rightRb.isKinematic = (leftGrabbed || latestGrabbed == right) && attached;
+        // middle.transform.position = (left.transform.position + right.transform.position)/2f;
+        // middle.transform.eulerAngles = Vector3.Cross(left.transform.position - right.transform.position, left.transform.up);
+        // middle.transform.localScale = new Vector3(Vector3.Distance(left.transform.position, right.transform.position) - 0.1f,middleBaseScale.y,middleBaseScale.z);
         if (left.transform.parent == right) left.transform.localRotation = Quaternion.identity;
         if (right.transform.parent == left) right.transform.localRotation = Quaternion.identity;
         if (attached)
@@ -68,6 +74,7 @@ public class Booster : MonoBehaviour
             if (leftGrabbed && rightGrabbed && Vector3.Dot(leftVelocity, rightVelocity) < -4f)
             {
                 SpawnSeeds();
+                Destroy(middle);
                 left.transform.SetParent(null);
                 right.transform.SetParent(null);
                 attached = false;
