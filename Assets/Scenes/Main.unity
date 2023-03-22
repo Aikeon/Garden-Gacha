@@ -686,37 +686,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 123a64c0156dbd743975dcf7b89356b8, type: 3}
---- !u!1 &179089783
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 179089784}
-  m_Layer: 0
-  m_Name: ReferencePointX
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &179089784
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 179089783}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.05, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 881780537}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &239217719
 GameObject:
   m_ObjectHideFlags: 0
@@ -1210,6 +1179,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BoosterSpawner (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2936080707457061720, guid: 4f164feeb385de1459dd7eed7aa15e97, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2936080707457061723, guid: 4f164feeb385de1459dd7eed7aa15e97, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -1480,11 +1453,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a86c40ce3142de548975f9b280b0a946, type: 3}
---- !u!4 &881780537 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6170622975477202602, guid: 123a64c0156dbd743975dcf7b89356b8, type: 3}
-  m_PrefabInstance: {fileID: 131915158}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &922392583
 GameObject:
   m_ObjectHideFlags: 0
@@ -2358,6 +2326,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BoosterSpawner (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 2936080707457061720, guid: 4f164feeb385de1459dd7eed7aa15e97, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2936080707457061723, guid: 4f164feeb385de1459dd7eed7aa15e97, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -2860,37 +2832,11 @@ Transform:
   m_Father: {fileID: 1656880934}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1493301960
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1493301961}
-  m_Layer: 0
-  m_Name: ReferencePoint
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1493301961
+--- !u!4 &1493301961 stripped
 Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 5723639391531869800, guid: 123a64c0156dbd743975dcf7b89356b8, type: 3}
+  m_PrefabInstance: {fileID: 131915158}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1493301960}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.045000013, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 881780537}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1524459550
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4254,6 +4200,10 @@ PrefabInstance:
     - target: {fileID: 2936080707457061720, guid: 4f164feeb385de1459dd7eed7aa15e97, type: 3}
       propertyPath: m_Name
       value: BoosterSpawner
+      objectReference: {fileID: 0}
+    - target: {fileID: 2936080707457061720, guid: 4f164feeb385de1459dd7eed7aa15e97, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2936080707457061723, guid: 4f164feeb385de1459dd7eed7aa15e97, type: 3}
       propertyPath: m_RootOrder

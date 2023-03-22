@@ -29,6 +29,8 @@ public class Booster : MonoBehaviour
     private Vector3 rightPrevPos;
     [SerializeField] private GameObject middle;
     private Vector3 middleBaseScale;
+    [SerializeField] Transform topReference;
+    [SerializeField] Transform botReference;
     private float leftRightDist;
     private bool leftGrabbed = false;
     private bool rightGrabbed = false;
@@ -64,8 +66,11 @@ public class Booster : MonoBehaviour
         rightVelocity = (right.transform.position - rightPrevPos) / Time.deltaTime;
         leftRb.isKinematic = (rightGrabbed || latestGrabbed == left) && attached;
         rightRb.isKinematic = (leftGrabbed || latestGrabbed == right) && attached;
+        Debug.Log((topReference.localPosition.y - botReference.localPosition.y));
+        middle.transform.localEulerAngles = Mathf.Atan((topReference.localPosition.x + botReference.localPosition.x) / (topReference.localPosition.y - botReference.localPosition.y)) * 180 / Mathf.PI * Vector3.forward;
         // middle.transform.position = (left.transform.position + right.transform.position)/2f;
-        // middle.transform.eulerAngles = Vector3.Cross(left.transform.position - right.transform.position, left.transform.up);
+        // middle.transform.localEulerAngles = (left.transform.localEulerAngles + right.transform.localEulerAngles) / 2f;
+        // middle.transform.localEulerAngles = Vector3.Cross(left.transform.position - right.transform.position, left.transform.up);
         // middle.transform.localScale = new Vector3(Vector3.Distance(left.transform.position, right.transform.position) - 0.1f,middleBaseScale.y,middleBaseScale.z);
         if (left.transform.parent == right) left.transform.localRotation = Quaternion.identity;
         if (right.transform.parent == left) right.transform.localRotation = Quaternion.identity;

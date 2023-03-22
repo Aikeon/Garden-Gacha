@@ -24,5 +24,7 @@ public class ParentOffset : MonoBehaviour
     {
         if (isMiddle) {transform.localPosition = new Vector3((down.localPosition.x + up.localPosition.x)/2, (down.localPosition.y + up.localPosition.y)/2, (down.localPosition.z + up.localPosition.z)/2); return;}
         transform.position = parent.position - transform.parent.rotation * parent.localRotation * Quaternion.AngleAxis(90,Vector3.right) * offset;
+        var midOffset = transform.position - scaleParent.position;
+        transform.position = Quaternion.Euler(0,-scaleParent.localEulerAngles.z,0) * midOffset + scaleParent.position;
     }
 }
