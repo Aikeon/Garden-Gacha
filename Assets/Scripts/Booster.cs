@@ -9,16 +9,23 @@ public class Booster : MonoBehaviour
     {
         Bronze,
         Silver,
-        Gold,
-        SHINY,
+        Gold
     }
-    private float[,] weights = new float[4,7] 
-        {{0.5f,0.15f,0.15f,0.1f,0.1f,0,0},
-        {0.5f,0.15f,0.15f,0.1f,0.1f,0,0},
-        {0.5f,0.15f,0.15f,0.1f,0.1f,0,0},
-        {0.5f,0.15f,0.15f,0.1f,0.1f,0,0}};
-    [SerializeField] private GameObject[] sachets;
-    [SerializeField] private Rarity rarity;
+
+    [Header("Graines")]
+    [SerializeField] private Graine[] grainesBronze;
+    [SerializeField] private Graine[] grainesArgent;
+    [SerializeField] private Graine[] grainesOr;
+    private Graine _choosenGraine;
+    private bool graineIsKnown = false;
+    
+    [Header("Rarerté")]
+    [SerializeField] private Material sachetBronze;
+    [SerializeField] private Material sachetArgent;
+    [SerializeField] private Material sachetOr;
+    public Rarity rarity;
+    
+    
     [SerializeField] private XRGrabInteractable left;
     private Rigidbody leftRb;
     private Vector3 leftVelocity;
@@ -48,13 +55,34 @@ public class Booster : MonoBehaviour
         rightPrevPos = right.transform.position;
         leftRb = left.GetComponent<Rigidbody>();
         rightRb = right.GetComponent<Rigidbody>();
-        switch (rarity) //TODO équilibrer
+        
+    }
+
+    public void StartMaterial(Rarity _rarity)
+    {
+        rarity = _rarity;
+        switch (rarity) 
         {
-            case Rarity.Bronze: price = 5; break;
-            case Rarity.Silver: price = 15; break;
-            case Rarity.Gold: price = 50; break;
-            case Rarity.SHINY: price = 200; break;
+            case Rarity.Bronze: 
+                price = 5;
+                left.GetComponent<Renderer>().material = sachetBronze;
+                right.GetComponent<Renderer>().material = sachetBronze;
+                middle.GetComponent<Renderer>().material = sachetBronze;
+                break;
+            case Rarity.Silver: 
+                price = 10; 
+                left.GetComponent<Renderer>().material = sachetArgent;
+                right.GetComponent<Renderer>().material = sachetArgent;
+                middle.GetComponent<Renderer>().material = sachetArgent;
+                break;
+            case Rarity.Gold: 
+                price = 25; 
+                left.GetComponent<Renderer>().material = sachetOr;
+                right.GetComponent<Renderer>().material = sachetOr;
+                middle.GetComponent<Renderer>().material = sachetOr;
+                break;
         }
+        SetGraine();
     }
 
     // Update is called once per frame
@@ -89,22 +117,111 @@ public class Booster : MonoBehaviour
         rightPrevPos = right.transform.position;   
     }
 
+    private void SetGraine()
+    {
+        switch (rarity)
+        {
+            case Rarity.Bronze:
+                int r = Random.Range(0, 100);
+                switch (r)
+                {
+                    case < 85:
+                    {
+                        int i = Random.Range(0, grainesBronze.Length);
+                        _choosenGraine = grainesBronze[i];
+                        break;
+                    }
+                    case < 98:
+                    {
+                        int j = Random.Range(0, grainesArgent.Length);
+                        _choosenGraine = grainesArgent[j];
+                        break;
+                    }
+                    default:
+                    {
+                        int k = Random.Range(0, grainesOr.Length);
+                        _choosenGraine = grainesOr[k];
+                        break;
+                    }
+                }
+                break;
+            case Rarity.Silver:
+                int s = Random.Range(0, 100);
+                switch (s)
+                {
+                    case < 15:
+                    {
+                        int i = Random.Range(0, grainesBronze.Length);
+                        _choosenGraine = grainesBronze[i];
+                        break;
+                    }
+                    case < 90:
+                    {
+                        int j = Random.Range(0, grainesArgent.Length);
+                        _choosenGraine = grainesArgent[j];
+                        break;
+                    }
+                    default:
+                    {
+                        int k = Random.Range(0, grainesOr.Length);
+                        _choosenGraine = grainesOr[k];
+                        break;
+                    }
+                }
+                break;
+            case Rarity.Gold:
+                int t = Random.Range(0, 100);
+                switch (t)
+                {
+                    case < 3:
+                    {
+                        int i = Random.Range(0, grainesBronze.Length);
+                        _choosenGraine = grainesBronze[i];
+                        break;
+                    }
+                    case < 40:
+                    {
+                        int j = Random.Range(0, grainesArgent.Length);
+                        _choosenGraine = grainesArgent[j];
+                        break;
+                    }
+                    default:
+                    {
+                        int k = Random.Range(0, grainesOr.Length);
+                        _choosenGraine = grainesOr[k];
+                        break;
+                    }
+                }
+                break;
+        }
+    }
+
+    public void SetMaterial()
+    {
+        if (graineIsKnown) return;
+        left.GetComponent<Renderer>().material = _choosenGraine.vegData.boosterMaterial;
+        right.GetComponent<Renderer>().material = _choosenGraine.vegData.boosterMaterial;
+        middle.GetComponent<Renderer>().material = _choosenGraine.vegData.boosterMaterial;
+        graineIsKnown = true;
+    }
+
     public void Hover()
     {
         if (!purchased)
-        switch (rarity)
-        {
-            case Rarity.Bronze: TheGuyBehaviour.Instance.state = 1; break;
-            case Rarity.Silver: TheGuyBehaviour.Instance.state = 2; break;
-            case Rarity.Gold:
-            case Rarity.SHINY: TheGuyBehaviour.Instance.state = 3; break;
-        }
+            switch (rarity)
+            {
+                case Rarity.Bronze: TheGuyBehaviour.Instance.state = 1; break;
+                case Rarity.Silver: TheGuyBehaviour.Instance.state = 2; break;
+                case Rarity.Gold: TheGuyBehaviour.Instance.state = 3; break;
+            }
     }
 
     public void StopHover()
     {
         if (!purchased)
-        TheGuyBehaviour.Instance.state = 0;
+        {
+            TheGuyBehaviour.Instance.state = 0;
+        }
     }
 
     public void GrabLeft()
@@ -114,7 +231,7 @@ public class Booster : MonoBehaviour
         {
             purchased = true;
             GameManager.Instance.money -= price;
-            TheGuyBehaviour.Instance.state = 0;
+           // TheGuyBehaviour.Instance.state = 0;
             origin.pickedBooster();
         }
         leftGrabbed = true;
@@ -159,7 +276,7 @@ public class Booster : MonoBehaviour
         {
             purchased = true;
             GameManager.Instance.money -= price;
-            TheGuyBehaviour.Instance.state = 0;
+          //  TheGuyBehaviour.Instance.state = 0;
             origin.pickedBooster();
         }
         rightGrabbed = true;
@@ -205,18 +322,10 @@ public class Booster : MonoBehaviour
             case Rarity.Bronze: numberOfSeeds = Random.Range(3,5); break;
             case Rarity.Silver: numberOfSeeds = Random.Range(3,5); break;
             case Rarity.Gold: numberOfSeeds = Random.Range(3,5); break;
-            case Rarity.SHINY: numberOfSeeds = Random.Range(3,5); break;
         }
         for (int k = 0; k < numberOfSeeds; k++)
         {
-            var rd = Random.Range(0f,1f);
-            var index = 0;
-            while (rd - weights[(int)rarity,index] > 0)
-            {
-                rd -= weights[(int)rarity,index];
-                index++;
-            }
-            var sachet = Instantiate(sachets[index], (left.transform.position + right.transform.position) / 2f, Quaternion.identity);
+            var sachet = Instantiate(_choosenGraine, (left.transform.position + right.transform.position) / 2f, Quaternion.identity);
             sachet.GetComponent<Rigidbody>().AddForce(0.1f * Random.onUnitSphere, ForceMode.Impulse);
         }
         StartCoroutine(DespawnGarbage());

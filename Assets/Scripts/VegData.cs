@@ -112,7 +112,7 @@ public class VegData : ScriptableObject
     public float vegGrowthTime;
     public float vegWateringTime;
     public VegType mapType;
-    public int prodNumber;
+    public Material boosterMaterial;
     public float basePrice;
 }
 

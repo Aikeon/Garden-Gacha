@@ -1635,15 +1635,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7cfffccafe1d29e46b7b62c2070e10aa, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.03
+      value: 0.0225
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7cfffccafe1d29e46b7b62c2070e10aa, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.03
+      value: 0.0225
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7cfffccafe1d29e46b7b62c2070e10aa, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.03
+      value: 0.0225
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7cfffccafe1d29e46b7b62c2070e10aa, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1684,6 +1684,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 7cfffccafe1d29e46b7b62c2070e10aa, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7cfffccafe1d29e46b7b62c2070e10aa, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8416163091357388770, guid: 7cfffccafe1d29e46b7b62c2070e10aa, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1834,6 +1838,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 6372780501293548632}
+        m_TargetAssemblyTypeName: Booster, Assembly-CSharp
+        m_MethodName: SetMaterial
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
       m_Calls:
@@ -1919,6 +1935,19 @@ MonoBehaviour:
   m_ForceGravityOnDetach: 0
   m_RetainTransformParent: 1
   m_AttachPointCompatibilityMode: 0
+--- !u!65 &285927273992200716
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2201975111281618372}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.11201452, y: 0.027532566, z: 0.010692043}
+  m_Center: {x: 0, y: 0.04568501, z: 3.246115e-16}
 --- !u!4 &2401199188470114203 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 7cfffccafe1d29e46b7b62c2070e10aa, type: 3}
@@ -1996,14 +2025,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fe74385f704bba4c9eb76a0ee5356a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sachets:
-  - {fileID: 244481549776594625, guid: 2a3f5d1aae7ac114980dc005ac50dc39, type: 3}
-  - {fileID: 1757688958665151237, guid: f2a5a2f518d2cf04090542aff68391a6, type: 3}
-  - {fileID: 4140266267372944582, guid: 6ff4c2f1dfa9c0e4db497585f685945b, type: 3}
-  - {fileID: 6680201634199987965, guid: fda249946e543df4f9ad8f86bc1bd1e4, type: 3}
-  - {fileID: 7817827639570711076, guid: 8be68e284827149489b1ce2bd296debe, type: 3}
-  - {fileID: 8639582049962634052, guid: 981e060ec411ae44586b4b695de63b58, type: 3}
-  - {fileID: 3728632956489805681, guid: 9b3980fd0a13cd34cb1f264665bc1f9b, type: 3}
+  grainesBronze:
+  - {fileID: 4140266267372944635, guid: 6ff4c2f1dfa9c0e4db497585f685945b, type: 3}
+  - {fileID: 8639582049962634105, guid: 981e060ec411ae44586b4b695de63b58, type: 3}
+  - {fileID: 7817827639570711065, guid: 8be68e284827149489b1ce2bd296debe, type: 3}
+  grainesArgent:
+  - {fileID: 244481549776594684, guid: 2a3f5d1aae7ac114980dc005ac50dc39, type: 3}
+  - {fileID: 6680201634199987904, guid: fda249946e543df4f9ad8f86bc1bd1e4, type: 3}
+  grainesOr:
+  - {fileID: 1757688958665151288, guid: f2a5a2f518d2cf04090542aff68391a6, type: 3}
+  - {fileID: 3728632956489805644, guid: 9b3980fd0a13cd34cb1f264665bc1f9b, type: 3}
+  sachetBronze: {fileID: 2100000, guid: a31aeb255bc125b4a81750a7578b62c0, type: 2}
+  sachetArgent: {fileID: 2100000, guid: 4e343fe6d5b0fc44594ecd6909058708, type: 2}
+  sachetOr: {fileID: 2100000, guid: 64e3560bbc50ecf42ab785e2ac45b718, type: 2}
   rarity: 0
   left: {fileID: 2919314320602371224}
   right: {fileID: 5286527692283795583}
@@ -2120,6 +2154,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 6372780501293548632}
+        m_TargetAssemblyTypeName: Booster, Assembly-CSharp
+        m_MethodName: SetMaterial
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
       m_Calls:
@@ -2205,6 +2251,19 @@ MonoBehaviour:
   m_ForceGravityOnDetach: 0
   m_RetainTransformParent: 1
   m_AttachPointCompatibilityMode: 0
+--- !u!65 &8574408388707076792
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8264265703801773430}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.11201452, y: 0.027532566, z: 0.010692043}
+  m_Center: {x: 0, y: -0.04568501, z: -3.246115e-16}
 --- !u!4 &8461220336684697650 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -3191865088459028414, guid: 7cfffccafe1d29e46b7b62c2070e10aa, type: 3}

@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class BoosterSpawner : MonoBehaviour
 {
-    [SerializeField] private GameObject boosterPackPrefab;
+    [SerializeField] private Booster boosterPackPrefab;
+    [SerializeField] private Booster.Rarity rarity;
 
     void Start()
     {
@@ -20,7 +21,8 @@ public class BoosterSpawner : MonoBehaviour
     {
         //TODO fancy animation or VFX
         yield return new WaitForSeconds(2f);
-        var b = Instantiate(boosterPackPrefab, transform.position + 0.25f * Vector3.up, transform.rotation);
-        b.GetComponent<Booster>().origin = this;
+        var b = Instantiate(boosterPackPrefab, transform.position + 0.01f * Vector3.up, transform.rotation);
+        b.origin = this;
+        b.StartMaterial(rarity);
     }
 }

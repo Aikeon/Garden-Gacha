@@ -16,5 +16,5 @@ MonoBehaviour:
   vegGrowthTime: 4
   vegWateringTime: 6
   mapType: 5
-  prodNumber: 1
+  boosterMaterial: {fileID: 2100000, guid: 9def46dffe3f12b42ac9f9a224cb7647, type: 2}
   basePrice: 1

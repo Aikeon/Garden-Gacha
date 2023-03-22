@@ -238,7 +238,7 @@ MonoBehaviour:
   m_SelectEntered:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 4034681860465327624}
         m_TargetAssemblyTypeName: Vegetable, Assembly-CSharp
         m_MethodName: Collect
         m_Mode: 1
@@ -253,7 +253,7 @@ MonoBehaviour:
   m_SelectExited:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 4034681860465327624}
         m_TargetAssemblyTypeName: Vegetable, Assembly-CSharp
         m_MethodName: LoseGrip
         m_Mode: 1
@@ -435,7 +435,7 @@ MonoBehaviour:
   m_SelectEntered:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 20284580386944508}
         m_TargetAssemblyTypeName: Vegetable, Assembly-CSharp
         m_MethodName: Collect
         m_Mode: 1
@@ -450,7 +450,7 @@ MonoBehaviour:
   m_SelectExited:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 20284580386944508}
         m_TargetAssemblyTypeName: Vegetable, Assembly-CSharp
         m_MethodName: LoseGrip
         m_Mode: 1
@@ -622,7 +622,7 @@ MonoBehaviour:
   m_SelectEntered:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 4805916124675414207}
         m_TargetAssemblyTypeName: Vegetable, Assembly-CSharp
         m_MethodName: Collect
         m_Mode: 1
@@ -637,7 +637,7 @@ MonoBehaviour:
   m_SelectExited:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 4805916124675414207}
         m_TargetAssemblyTypeName: Vegetable, Assembly-CSharp
         m_MethodName: LoseGrip
         m_Mode: 1
