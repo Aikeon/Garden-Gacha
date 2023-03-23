@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
     public float money = 0;
     public int month = 0;
     public float monthDuration;
-    private float _monthTimer = 0f;
+
 
     void Awake()
     {
