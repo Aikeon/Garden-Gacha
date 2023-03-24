@@ -42,7 +42,6 @@ public class SimpleHandAnimator : MonoBehaviour
 
     private void AnimateHand()
     {
-        print("anim");
         if (_gripCurrent != _gripTarget)
         {
             print("grip");
@@ -52,7 +51,6 @@ public class SimpleHandAnimator : MonoBehaviour
 
         if (_triggerCurrent != _triggerTarget)
         {
-            print("trigger");
             _triggerCurrent = Mathf.MoveTowards(_triggerCurrent, _triggerTarget, Time.deltaTime * speed);
             _animator.SetFloat(Trigger, _triggerCurrent);
         }

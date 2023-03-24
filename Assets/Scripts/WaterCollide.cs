@@ -33,7 +33,7 @@ public class WaterCollide : MonoBehaviour
         {
             _particlesFirstCollisionTime = Time.time;
             _particlesLastCollisionTime = Time.time;
-            Debug.Log("début collision à " + _particlesFirstCollisionTime);
+        //    Debug.Log("début collision à " + _particlesFirstCollisionTime);
             
             // Set our particles colliding flag to true
             _particlesCollided = true;
@@ -59,7 +59,7 @@ public class WaterCollide : MonoBehaviour
             // Set our particles colliding flag to false, check if vegetables can grow
             _particlesCollided = false;
             totalTimeUnderWater += timeUnderWater;
-            Debug.Log("fin collision ! Nouveau temps total : " + (totalTimeUnderWater) + " dont un ajout temps : " + timeUnderWater);
+       //     Debug.Log("fin collision ! Nouveau temps total : " + (totalTimeUnderWater) + " dont un ajout temps : " + timeUnderWater);
 
         }
         

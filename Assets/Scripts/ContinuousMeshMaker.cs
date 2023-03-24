@@ -39,10 +39,12 @@ public class ContinuousMeshMaker : MonoBehaviour
             if (normals[i].y < 0) normals[i] = -normals[i];
         }
         Mesh mesh = new Mesh();
-        GetComponent<MeshFilter>().mesh = mesh;
+        
         mesh.vertices = vert;
         mesh.triangles = indices;
         mesh.normals = normals;
         mesh.uv = uvs;
+        
+        GetComponent<MeshFilter>().mesh = mesh;
     }
 }

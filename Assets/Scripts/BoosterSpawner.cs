@@ -21,7 +21,7 @@ public class BoosterSpawner : MonoBehaviour
     {
         //TODO fancy animation or VFX
         yield return new WaitForSeconds(2f);
-        var b = Instantiate(boosterPackPrefab, transform.position + 0.01f * Vector3.up, transform.rotation);
+        var b = Instantiate(boosterPackPrefab, transform.position + 0.01f * Vector3.up,  Quaternion.Euler(-90,0,0));
         b.origin = this;
         b.StartMaterial(rarity);
     }

@@ -25,7 +25,7 @@ public class Booster : MonoBehaviour
     [SerializeField] private Material sachetOr;
     public Rarity rarity;
     
-    
+    [Header("Mesh")]
     [SerializeField] private XRGrabInteractable left;
     private Rigidbody leftRb;
     private Vector3 leftVelocity;
@@ -43,6 +43,8 @@ public class Booster : MonoBehaviour
     private bool rightGrabbed = false;
     private bool attached = true;
     private bool purchased = false;
+    
+    [Header("Autre")]
     public BoosterSpawner origin;
     private float price;
     private XRGrabInteractable latestGrabbed;
@@ -94,7 +96,7 @@ public class Booster : MonoBehaviour
         rightVelocity = (right.transform.position - rightPrevPos) / Time.deltaTime;
         leftRb.isKinematic = (rightGrabbed || latestGrabbed == left) && attached;
         rightRb.isKinematic = (leftGrabbed || latestGrabbed == right) && attached;
-        Debug.Log((topReference.localPosition.y - botReference.localPosition.y));
+//        Debug.Log((topReference.localPosition.y - botReference.localPosition.y));
         middle.transform.localEulerAngles = Mathf.Atan((topReference.localPosition.x + botReference.localPosition.x) / (topReference.localPosition.y - botReference.localPosition.y)) * 180 / Mathf.PI * Vector3.forward;
         // middle.transform.position = (left.transform.position + right.transform.position)/2f;
         // middle.transform.localEulerAngles = (left.transform.localEulerAngles + right.transform.localEulerAngles) / 2f;

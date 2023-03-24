@@ -15,7 +15,8 @@ public class GrowingPlant : MonoBehaviour
     public bool isMature = false;
     public int veggiesToCollect;
 
-    private Animator _anim;
+    [SerializeField] private Animator _anim;
+    [SerializeField] Renderer renderer;
     public GameObject vegetable;
     
     public List<Vegetable> potentialsVegetables;
@@ -23,7 +24,10 @@ public class GrowingPlant : MonoBehaviour
 
     private void Start()
     {
-        _anim = GetComponentInChildren<Animator>();
+        //_anim = GetComponentInChildren<Animator>();
+        renderer.enabled = false;
+        print(_anim);
+        print(renderer);
     }
 
     // Update is called once per frame
@@ -47,24 +51,31 @@ public class GrowingPlant : MonoBehaviour
     
     public void Grow()
     {
-        _anim.gameObject.GetComponent<Renderer>().enabled = true;
+        print("grow");
+        renderer.enabled = true;
         StartCoroutine(GrowthCoroutine());
     }
 
     IEnumerator GrowthCoroutine()
     {
+        print("growCoroutine");
         _anim.CrossFade("Growth", 0.01f);
+        print("crossFade");
         _anim.speed = 1 / data.vegGrowthTime;
+        print("changeSpeed");
         yield return new WaitForSeconds(data.vegGrowthTime);
         vegetable.SetActive(true);
+        print("setActive");
 
         ShowCollectablesVeggies();
         
         _anim.gameObject.SetActive(false);
+        print("setActive");
     }
 
     private void ShowCollectablesVeggies()
     {
+        print("show");
         switch (veggiesToCollect)
         {
             case 3:

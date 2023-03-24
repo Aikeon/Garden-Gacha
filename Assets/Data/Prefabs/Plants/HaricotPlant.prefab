@@ -50,6 +50,8 @@ MonoBehaviour:
   data: {fileID: 11400000, guid: 1a60c380d8944454aaddc1ae74ffa700, type: 2}
   isMature: 0
   veggiesToCollect: 0
+  _anim: {fileID: 8404834024875876191}
+  renderer: {fileID: 6323230691016400421}
   vegetable: {fileID: 3074099145790070952}
   potentialsVegetables:
   - {fileID: 20284580386944508}
@@ -732,7 +734,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4591574538610200310, guid: 6fe06c0d806a9854a8fd55926d9fa4c9, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7835238449432680919, guid: 6fe06c0d806a9854a8fd55926d9fa4c9, type: 3}
       propertyPath: m_RootOrder
@@ -810,3 +812,8 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!23 &6323230691016400421 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 4591574538610200310, guid: 6fe06c0d806a9854a8fd55926d9fa4c9, type: 3}
+  m_PrefabInstance: {fileID: 7527815675209289939}
+  m_PrefabAsset: {fileID: 0}

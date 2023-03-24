@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -35,5 +36,10 @@ public class Vegetable : MonoBehaviour
     {
         rb.useGravity = true;
         rb.isKinematic = false;
+    }
+
+    private void OnDestroy()
+    {
+        origin.CollectedChild();
     }
 }

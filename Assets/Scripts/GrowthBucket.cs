@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 using Debug = UnityEngine.Debug;
@@ -46,20 +47,24 @@ public class GrowthBucket : MonoBehaviour
         var newPlant = Instantiate(veg.vegPrefab, pos, Quaternion.identity);
         newPlant.GetComponent<GrowingPlant>().conteneur = this;
         newPlant.SetActive(true);
-
+        
         StartCoroutine(WaitOtherSeed(newPlant.GetComponent<GrowingPlant>()));
     }
 
     IEnumerator WaitOtherSeed(GrowingPlant newPlant)
     {
+        print("wait");
         while (_waterCollide.timeUnderWater + _waterCollide.totalTimeUnderWater < newPlant.data.vegWateringTime)
         {
             yield return null;
         }
 
         newPlant.SetQuantity();
+        print("setQuantity");
+        print(newPlant);
         newPlant.Grow();
-        Debug.Log(newPlant +"Pousse après " + (_waterCollide.timeUnderWater + _waterCollide.totalTimeUnderWater) + " secondes");
+        print("callGrow");
+     //   Debug.Log(newPlant +"Pousse après " + (_waterCollide.timeUnderWater + _waterCollide.totalTimeUnderWater) + " secondes");
     }
 
     
@@ -82,6 +87,12 @@ public class GrowthBucket : MonoBehaviour
         {
             _soiled = false;
         }
+
+        bool resetWater = content.All(veg => veg.vegPrefab.GetComponent<GrowingPlant>().isMature);
+
+        if (!resetWater) return;
+        _waterCollide.timeUnderWater = 0;
+        _waterCollide.totalTimeUnderWater = 0;
     }
 
 
