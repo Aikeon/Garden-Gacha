@@ -34,7 +34,6 @@ public class Condition
         System.Reflection.FieldInfo[] memberArray = myObjectType.GetFields();
         foreach (var item in memberArray)
         {
-            Debug.Log(item.ToString().Split(' ')[1]);
             if (item.ToString().Split(' ')[1] == variable)
             {
                 parameter = (float)item.GetValue(scriptReference);
@@ -136,6 +135,7 @@ public class Achievements : MonoBehaviour
                 {
                     achievement.done = b;
                     AudioManager.Instance.PlaySFX("AchievementGet");
+                    GameManager.Instance.money += achievement.bounty;
                 }
                 
             }

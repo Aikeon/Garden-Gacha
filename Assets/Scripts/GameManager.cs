@@ -32,6 +32,7 @@ public class GameManager : MonoBehaviour
     public float moneyGainInNSecs;
     public float moneyGainIn30Secs;
     public float moneyGainIn60Secs;
+    public bool autosaveOn;
 
     void Awake()
     {
@@ -57,6 +58,7 @@ public class GameManager : MonoBehaviour
 
     void OnApplicationQuit()
     {
+        if (autosaveOn)
         SaveGame();
     }
 
