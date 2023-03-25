@@ -23,7 +23,7 @@ public class LockedDirt : MonoBehaviour
         topLight.gameObject.SetActive(false);
         if (isFirst)
         {
-            Unlock();
+            Unlock(true);
         }
     }
 
@@ -33,12 +33,15 @@ public class LockedDirt : MonoBehaviour
         ;
     }
 
-    public void Unlock()
+    public void Unlock(bool save = false)
     {
-        if (unlocked || GameManager.Instance.money < price) return;
+        if ((unlocked || GameManager.Instance.money < price) && !save) return;
 
         unlocked = true;
-        GameManager.Instance.money -= price;
+        if (!save)
+        {
+            GameManager.Instance.money -= price;
+        }
         var newMaterials =  _renderer.materials;
         newMaterials[1] = unlockedMaterial;
         _renderer.materials = newMaterials;

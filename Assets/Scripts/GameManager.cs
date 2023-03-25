@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour
     public float timeInGame = 0f;
     public List<ObjCount<Booster.Rarity>> boughtBoosterCount;
     public int Nsecs;
-    private List<float> moneyGainLatestNSecs;
+    private List<float> moneyGainLatestNSecs = new List<float>();
     public float moneyGainInNSecs;
 
     void Awake()
@@ -108,7 +108,7 @@ public class GameManager : MonoBehaviour
             }
             foreach (int i in save.unlockedDirts)
             {
-                Tables.GetChild(i).GetComponent<LockedDirt>().dirt.enabled = true;
+                Tables.GetChild(i).GetComponent<LockedDirt>().Unlock(true);
             }
 
             // Resets menu display
@@ -138,7 +138,7 @@ public class GameManager : MonoBehaviour
         {
             if (Tables.GetChild(i).TryGetComponent<LockedDirt>(out var possiblyLockedDirt))
             {
-                if (possiblyLockedDirt.dirt.enabled) save.unlockedDirts.Add(i);
+                if (possiblyLockedDirt.unlocked) save.unlockedDirts.Add(i);
             }
         }
 
