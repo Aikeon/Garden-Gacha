@@ -147,6 +147,14 @@ public class ListToPopupDrawer : PropertyDrawer
 
 public class Achievements : MonoBehaviour
 {
+    public static Achievements Instance;
+
+    void Awake()
+    {
+        if (Instance != null) Destroy(this);
+        Instance = this;
+    }
+
     public List<Achievement> achievements;
 
     //Update is called once per frame
