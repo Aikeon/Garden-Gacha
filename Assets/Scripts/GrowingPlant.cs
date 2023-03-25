@@ -105,6 +105,7 @@ public class GrowingPlant : MonoBehaviour
 
     public void CollectedChild()
     {
+        print("CollectedChild");
         veggiesToCollect--;
         if (veggiesToCollect == 0)
         {

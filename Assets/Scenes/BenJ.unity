@@ -509,6 +509,7 @@ MonoBehaviour:
   price: 50
   unlockedMaterial: {fileID: 2100000, guid: 1332f55049867254a86bdb97019e41f9, type: 2}
   priceDisplay: {fileID: 578373037}
+  topLight: {fileID: 1725686461}
 --- !u!1 &36047561
 GameObject:
   m_ObjectHideFlags: 0
@@ -14213,7 +14214,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   musics: []
-  sfx: []
+  sfx:
+  - name: 
+    clip: {fileID: 0}
   musicSource: {fileID: 711758308}
   sfxSource: {fileID: 1381412073}
 --- !u!4 &1078292628
@@ -15430,24 +15433,12 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 479256, guid: 220c818457a8d2441bf84edb4edee095, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.06666667
-      objectReference: {fileID: 0}
-    - target: {fileID: 479256, guid: 220c818457a8d2441bf84edb4edee095, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.06666667
-      objectReference: {fileID: 0}
-    - target: {fileID: 479256, guid: 220c818457a8d2441bf84edb4edee095, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.06666667
-      objectReference: {fileID: 0}
-    - target: {fileID: 479256, guid: 220c818457a8d2441bf84edb4edee095, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.4333334
       objectReference: {fileID: 0}
     - target: {fileID: 479256, guid: 220c818457a8d2441bf84edb4edee095, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.267
+      value: 0.39
       objectReference: {fileID: 0}
     - target: {fileID: 479256, guid: 220c818457a8d2441bf84edb4edee095, type: 3}
       propertyPath: m_LocalPosition.z
@@ -17090,7 +17081,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4140266267372944582, guid: 6ff4c2f1dfa9c0e4db497585f685945b, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4140266267372944634, guid: 6ff4c2f1dfa9c0e4db497585f685945b, type: 3}
       propertyPath: m_RootOrder
@@ -17139,7 +17130,7 @@ PrefabInstance:
     - target: {fileID: 4140266267372944635, guid: 6ff4c2f1dfa9c0e4db497585f685945b, type: 3}
       propertyPath: vegData
       value: 
-      objectReference: {fileID: 11400000, guid: a6186c999e8915e4f81b943b6fb93f7b, type: 2}
+      objectReference: {fileID: 11400000, guid: 3ef42b0d7161bea47a7e7332141ed41f, type: 2}
     - target: {fileID: 7399309962629592604, guid: 6ff4c2f1dfa9c0e4db497585f685945b, type: 3}
       propertyPath: m_IsKinematic
       value: 1
@@ -18758,7 +18749,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4140266267372944582, guid: 6ff4c2f1dfa9c0e4db497585f685945b, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4140266267372944634, guid: 6ff4c2f1dfa9c0e4db497585f685945b, type: 3}
       propertyPath: m_RootOrder
@@ -19959,6 +19950,7 @@ MonoBehaviour:
   price: 30
   unlockedMaterial: {fileID: 2100000, guid: 1332f55049867254a86bdb97019e41f9, type: 2}
   priceDisplay: {fileID: 1290613190}
+  topLight: {fileID: 1149665846}
 --- !u!65 &1825487045
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20157,6 +20149,7 @@ MonoBehaviour:
   price: 40
   unlockedMaterial: {fileID: 2100000, guid: 1332f55049867254a86bdb97019e41f9, type: 2}
   priceDisplay: {fileID: 1373120741}
+  topLight: {fileID: 1556988784}
 --- !u!114 &1825487053
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20316,6 +20309,7 @@ MonoBehaviour:
   price: 20
   unlockedMaterial: {fileID: 2100000, guid: 1332f55049867254a86bdb97019e41f9, type: 2}
   priceDisplay: {fileID: 1723964377}
+  topLight: {fileID: 1672351894}
 --- !u!114 &1825487056
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20475,6 +20469,7 @@ MonoBehaviour:
   price: 150
   unlockedMaterial: {fileID: 2100000, guid: 1332f55049867254a86bdb97019e41f9, type: 2}
   priceDisplay: {fileID: 1813968551}
+  topLight: {fileID: 1757251320}
 --- !u!1001 &1839972472
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21151,6 +21146,7 @@ MonoBehaviour:
   price: 75
   unlockedMaterial: {fileID: 2100000, guid: 1332f55049867254a86bdb97019e41f9, type: 2}
   priceDisplay: {fileID: 756887694}
+  topLight: {fileID: 912403895}
 --- !u!1001 &1921412476
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21962,6 +21958,7 @@ MonoBehaviour:
   price: 100
   unlockedMaterial: {fileID: 2100000, guid: 1332f55049867254a86bdb97019e41f9, type: 2}
   priceDisplay: {fileID: 940917464}
+  topLight: {fileID: 1385777500}
 --- !u!4 &2118916556 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2936080707457061723, guid: 4f164feeb385de1459dd7eed7aa15e97, type: 3}

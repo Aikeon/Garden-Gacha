@@ -9,20 +9,19 @@ public class LockedDirt : MonoBehaviour
     [SerializeField] private int price;
     [SerializeField] private Material unlockedMaterial;
     [SerializeField] private TMP_Text priceDisplay;
+    [SerializeField] private Light topLight;
     private bool _unlocked = false;
-    
+    private Renderer _renderer;
+
     // Start is called before the first frame update
     void Start()
     {
         dirt.enabled = false;
         priceDisplay.text = price.ToString() + " $";
+        _renderer = GetComponent<Renderer>();
+        topLight.gameObject.SetActive(false);
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 
     public void Unlock()
     {
@@ -30,7 +29,11 @@ public class LockedDirt : MonoBehaviour
 
         GameManager.Instance.money -= price;
         dirt.enabled = true;
-        GetComponent<Renderer>().materials[1] = unlockedMaterial;
-        Destroy(priceDisplay.transform.parent);
+        var newMaterials =  _renderer.materials;
+        newMaterials[1] = unlockedMaterial;
+        _renderer.materials = newMaterials;
+        topLight.gameObject.SetActive(true);
+        
+        Destroy(priceDisplay.transform.parent.gameObject);
     }
 }
