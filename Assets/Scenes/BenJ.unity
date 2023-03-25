@@ -512,11 +512,6 @@ MonoBehaviour:
   topLight: {fileID: 1725686461}
   unlocked: 0
   test: 0
---- !u!4 &34926211 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4097813834878089274, guid: 2b5a789a759ddc24193640ca89e9a2ba, type: 3}
-  m_PrefabInstance: {fileID: 1535470236}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &36047561
 GameObject:
   m_ObjectHideFlags: 0
@@ -15701,11 +15696,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 479256, guid: 220c818457a8d2441bf84edb4edee095, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.8962159
+      value: 1.339
       objectReference: {fileID: 0}
     - target: {fileID: 479256, guid: 220c818457a8d2441bf84edb4edee095, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.7823287
+      value: 0.456
       objectReference: {fileID: 0}
     - target: {fileID: 479256, guid: 220c818457a8d2441bf84edb4edee095, type: 3}
       propertyPath: m_LocalPosition.z
@@ -15713,19 +15708,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 479256, guid: 220c818457a8d2441bf84edb4edee095, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.99986094
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 479256, guid: 220c818457a8d2441bf84edb4edee095, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 479256, guid: 220c818457a8d2441bf84edb4edee095, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 479256, guid: 220c818457a8d2441bf84edb4edee095, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.016677175
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 479256, guid: 220c818457a8d2441bf84edb4edee095, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -15737,12 +15732,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 479256, guid: 220c818457a8d2441bf84edb4edee095, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: -1.911
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8821647010644164899, guid: 220c818457a8d2441bf84edb4edee095, type: 3}
-      propertyPath: CollisionModule.m_Planes.Array.data[1]
-      value: 
-      objectReference: {fileID: 34926211}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 220c818457a8d2441bf84edb4edee095, type: 3}
 --- !u!1001 &1245689547
@@ -15842,14 +15833,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1246919279}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0.02, y: -0.0125, z: -0.0157}
+  m_LocalRotation: {x: -0.7071068, y: 0.7071068, z: -0, w: 0}
+  m_LocalPosition: {x: 0.02, y: -0.0125, z: 0.001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 450105032}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: -90}
 --- !u!1 &1290613188
 GameObject:
   m_ObjectHideFlags: 0
@@ -17561,11 +17552,24 @@ MonoBehaviour:
   Tables: {fileID: 0}
   monthDuration: 60
   totalObtainedMoney: 0
-  soldVegCount: []
+  soldAil: 0
+  soldCarrottes: 0
+  soldChoux: 0
+  soldHaricots: 0
+  soldOignons: 0
+  soldPoireaux: 0
+  soldTomates: 0
+  totalVegCount: 0
   timeInGame: 0
-  boughtBoosterCount: []
+  boughtBronze: 0
+  boughtSilver: 0
+  boughtGold: 0
+  totalBoosterCount: 0
   Nsecs: 0
   moneyGainInNSecs: 0
+  moneyGainIn30Secs: 0
+  moneyGainIn60Secs: 0
+  autosaveOn: 0
 --- !u!4 &1534369887
 Transform:
   m_ObjectHideFlags: 0
@@ -20992,14 +20996,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2027901500}
-  m_LocalRotation: {x: -0.5, y: -0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: -0.02, y: -0.0125, z: -0.0157}
+  m_LocalRotation: {x: 0, y: -0, z: 0.7071068, w: -0.7071068}
+  m_LocalPosition: {x: -0.02, y: -0.0125, z: 0.01}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1506562978}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 90}
+  m_LocalEulerAnglesHint: {x: 180, y: -180, z: 90}
 --- !u!1001 &2067399460
 PrefabInstance:
   m_ObjectHideFlags: 0
