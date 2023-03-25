@@ -33,20 +33,12 @@ public class WaterCollide : MonoBehaviour
     void OnParticleCollision(GameObject other)
     {
         print("COLLISION");
-        if (!_particlesCollided[0] || !_particlesCollided[1])
+        
+        // Set our particles colliding flag to true
+        if (!_particlesCollided[0] && canReceiveWater[0])
         {
-            // Set our particles colliding flag to true
-            if (!_particlesCollided[0] && canReceiveWater[0])
-            {
-                _particlesLastCollisionTime[0] += Time.deltaTime;
-                _particlesCollided[0] = true;
-            }
-
-            if (!_particlesCollided[1] && canReceiveWater[1])
-            {
-                _particlesLastCollisionTime[1] += Time.deltaTime;
-                _particlesCollided[1] = true;
-            }
+            _particlesLastCollisionTime[0] += Time.deltaTime;
+            _particlesCollided[0] = true;
         }
         else
         {
@@ -55,7 +47,15 @@ public class WaterCollide : MonoBehaviour
             {
                 _particlesLastCollisionTime[0] += Time.deltaTime;
             }
+        }
 
+        if (!_particlesCollided[1] && canReceiveWater[1])
+        {
+            _particlesLastCollisionTime[1] += Time.deltaTime;
+            _particlesCollided[1] = true;
+        }
+        else
+        {
             if (canReceiveWater[1])
             {
                 _particlesLastCollisionTime[1] += Time.deltaTime;

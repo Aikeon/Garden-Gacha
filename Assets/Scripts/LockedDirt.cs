@@ -1,8 +1,10 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using TMPro;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class LockedDirt : MonoBehaviour
 {
@@ -48,5 +50,7 @@ public class LockedDirt : MonoBehaviour
         topLight.gameObject.SetActive(true);
         
         Destroy(priceDisplay.transform.parent.gameObject);
+        Destroy(GetComponent<XRGrabInteractable>());
+        Destroy(GetComponent<Rigidbody>());
     }
 }
