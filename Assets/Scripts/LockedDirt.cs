@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class LockedDirt : MonoBehaviour
 {
-    [SerializeField] private GrowthBucket dirt;
+    public GrowthBucket dirt;
     [SerializeField] private int price;
     [SerializeField] private Material unlockedMaterial;
     [SerializeField] private TMP_Text priceDisplay;

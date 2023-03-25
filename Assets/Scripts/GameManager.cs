@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
     public float money = 0;
     public int month = 0;
+    public Transform Tables;
     public float monthDuration;
     [Header("Statistiques")]
     public float totalObtainedMoney = 0;
@@ -105,6 +106,10 @@ public class GameManager : MonoBehaviour
                     a.done = true;
                 }
             }
+            foreach (int i in save.unlockedDirts)
+            {
+                Tables.GetChild(i).GetComponent<LockedDirt>().dirt.enabled = true;
+            }
 
             // Resets menu display
 
@@ -127,6 +132,16 @@ public class GameManager : MonoBehaviour
         save.soldVegCount = soldVegCount;
         save.boughtBoosterCount = boughtBoosterCount;
 
+        save.unlockedDirts = new List<int>();
+        var numTables = Tables.childCount;
+        for (int i = 0; i < numTables; i++)
+        {
+            if (Tables.GetChild(i).TryGetComponent<LockedDirt>(out var possiblyLockedDirt))
+            {
+                if (possiblyLockedDirt.dirt.enabled) save.unlockedDirts.Add(i);
+            }
+        }
+
         save.achievementsDone = new List<string>();
         foreach (Achievement a in Achievements.Instance.achievements)
         {
@@ -148,5 +163,6 @@ public class Save
     public List<ObjCount<VegType>> soldVegCount;
     public List<ObjCount<Booster.Rarity>> boughtBoosterCount;
     public List<string> achievementsDone;
+    public List<int> unlockedDirts;
 }
 
