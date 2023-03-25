@@ -12907,7 +12907,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   money: 10
   month: 0
-  Tables: {fileID: 0}
+  Tables: {fileID: 933507799}
   monthDuration: 60
   totalObtainedMoney: 0
   soldAil: 0
