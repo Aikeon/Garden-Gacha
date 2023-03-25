@@ -233,6 +233,10 @@ public class Booster : MonoBehaviour
         {
             purchased = true;
             GameManager.Instance.money -= price;
+            foreach (var bc in GameManager.Instance.boughtBoosterCount)
+            {
+                if (rarity == bc.obj) bc.count++;
+            }
            // TheGuyBehaviour.Instance.state = 0;
             origin.pickedBooster();
         }
@@ -278,6 +282,10 @@ public class Booster : MonoBehaviour
         {
             purchased = true;
             GameManager.Instance.money -= price;
+            foreach (var bc in GameManager.Instance.boughtBoosterCount)
+            {
+                if (rarity == bc.obj) bc.count++;
+            }
           //  TheGuyBehaviour.Instance.state = 0;
             origin.pickedBooster();
         }

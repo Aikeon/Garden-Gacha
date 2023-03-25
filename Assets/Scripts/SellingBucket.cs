@@ -19,9 +19,15 @@ public class SellingBucket : MonoBehaviour
         {
             ParticleSystem explosion = Instantiate(veg.soldExplosion, explosionTransform.position, explosionTransform.rotation);
             explosion.Play();
-           // audioSource.pitch = 1 + Random.Range(-0.2f,0.2f);
-           // audioSource.PlayOneShot(sfx);
+            // audioSource.pitch = 1 + Random.Range(-0.2f,0.2f);
+            // audioSource.PlayOneShot(sfx);
+            foreach (var sc in GameManager.Instance.soldVegCount)
+            {
+                if (sc.obj == veg.origin.data.mapType) sc.count++; 
+            }
+           
             GameManager.Instance.money += veg.origin.data.basePrice;
+            GameManager.Instance.totalObtainedMoney += veg.origin.data.basePrice;
             Destroy(veg.gameObject);
         }
     }
