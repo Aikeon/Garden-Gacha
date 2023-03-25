@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,42 +7,59 @@ using UnityEngine.Serialization;
 public class WaterCollide : MonoBehaviour
 {
     // Time spent under water, refreshed in real time. If particles stop colliding, this value is added to totalTimeUnderWater and reset to 0
-    public float timeUnderWater;
+    public float[] timeUnderWater = new float[2];
 
     // Total time spent under water, refreshed only when particles stop colliding
-    public float totalTimeUnderWater = 0f;
+    public float[] totalTimeUnderWater = new float[2];
     
     // Have particles collided ?
-    private bool _particlesCollided = false;
-     
-    // When did particles first collide ?
-    private float _particlesFirstCollisionTime = 10000f;
+    public bool[] _particlesCollided = new bool[2] {false, false};
     
     // When did particles last collide ?
-    private float _particlesLastCollisionTime = 10000f;
+    public float[] _particlesLastCollisionTime = new float[] {0f,0f};
      
     // How long do we go without particle collision before saying we are not ?
     private const float IntervalleWithoutCollision = 0.3f;
 
-    
-    
+    public GrowthBucket _bucket;
+    public bool[] canReceiveWater = new bool[2] {false, false};
+
+    private void Start()
+    {
+        _bucket = GetComponent<GrowthBucket>();
+    }
 
     // we get hit with a particle
     void OnParticleCollision(GameObject other)
     {
-        if (_particlesCollided == false)
+        print("COLLISION");
+        if (!_particlesCollided[0] || !_particlesCollided[1])
         {
-            _particlesFirstCollisionTime = Time.time;
-            _particlesLastCollisionTime = Time.time;
-        //    Debug.Log("début collision à " + _particlesFirstCollisionTime);
-            
             // Set our particles colliding flag to true
-            _particlesCollided = true;
+            if (!_particlesCollided[0] && canReceiveWater[0])
+            {
+                _particlesLastCollisionTime[0] += Time.deltaTime;
+                _particlesCollided[0] = true;
+            }
+
+            if (!_particlesCollided[1] && canReceiveWater[1])
+            {
+                _particlesLastCollisionTime[1] += Time.deltaTime;
+                _particlesCollided[1] = true;
+            }
         }
         else
         {
             // Record / Overwrite the time we just got hit with a water particle
-            _particlesLastCollisionTime = Time.time;
+            if (canReceiveWater[0])
+            {
+                _particlesLastCollisionTime[0] += Time.deltaTime;
+            }
+
+            if (canReceiveWater[1])
+            {
+                _particlesLastCollisionTime[1] += Time.deltaTime;
+            }
         }
 
         
@@ -51,18 +69,45 @@ public class WaterCollide : MonoBehaviour
     // If so, we calculate time spent under this "session d'arrosage" in timeUnderWater and add it to totalTimeUnderWater which counts all the "sessions d'arrosage".
     public void FixedUpdate()
     {
-        timeUnderWater = _particlesLastCollisionTime - _particlesFirstCollisionTime;
-
-        // If it's been long enough
-        if (_particlesCollided && (Time.time - _particlesLastCollisionTime > IntervalleWithoutCollision))
+        if (_bucket.content.Count <= 0) return;
+        for (int i = 0; i < _bucket.content.Count; i++)
         {
-            // Set our particles colliding flag to false, check if vegetables can grow
-            _particlesCollided = false;
-            totalTimeUnderWater += timeUnderWater;
-       //     Debug.Log("fin collision ! Nouveau temps total : " + (totalTimeUnderWater) + " dont un ajout temps : " + timeUnderWater);
+            if (canReceiveWater[i])
+            {
+               // print("can receive water : " + i);
+                timeUnderWater[i] = _particlesLastCollisionTime[i] ;
 
+             //   print("time under water = " + timeUnderWater[i]);
+             //   print("last collision = " + _particlesLastCollisionTime);
+                
+                // If it's been long enough
+                if (_particlesCollided[i] && (_particlesLastCollisionTime[i] > IntervalleWithoutCollision))
+                {
+                    // Set our particles colliding flag to false, check if vegetables can grow
+                    _particlesCollided[i] = false;
+                    totalTimeUnderWater[i] += timeUnderWater[i];
+                //    print("total time under water = " + totalTimeUnderWater[i]);
+                    
+                _particlesLastCollisionTime[i] = 0;
+                }
+
+                _bucket.waterTime[i] = timeUnderWater[i];
+                _bucket.waterTotalTime[i] = totalTimeUnderWater[i];
+            }
         }
-        
-       
+
+    }
+
+    public void StopWater(int i)
+    {
+        canReceiveWater[i] = false;
+        timeUnderWater[i] = 0;
+        totalTimeUnderWater[i] = 0;
+        _particlesLastCollisionTime[i] = 0;
+    }
+
+    public void StartWater(int i)
+    {
+        canReceiveWater[i] = true;
     }
 }

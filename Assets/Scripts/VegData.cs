@@ -113,6 +113,7 @@ public class VegData : ScriptableObject
     public float vegWateringTime;
     public VegType mapType;
     public Material boosterMaterial;
+    public Sprite sprite;
     public float basePrice;
 }
 

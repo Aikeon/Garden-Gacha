@@ -21,13 +21,13 @@ public class GrowingPlant : MonoBehaviour
     
     public List<Vegetable> potentialsVegetables;
 
+    public int index;
+
 
     private void Start()
     {
         //_anim = GetComponentInChildren<Animator>();
         renderer.enabled = false;
-        print(_anim);
-        print(renderer);
     }
 
     // Update is called once per frame
@@ -51,31 +51,24 @@ public class GrowingPlant : MonoBehaviour
     
     public void Grow()
     {
-        print("grow");
         renderer.enabled = true;
         StartCoroutine(GrowthCoroutine());
     }
 
     IEnumerator GrowthCoroutine()
     {
-        print("growCoroutine");
         _anim.CrossFade("Growth", 0.01f);
-        print("crossFade");
         _anim.speed = 1 / data.vegGrowthTime;
-        print("changeSpeed");
         yield return new WaitForSeconds(data.vegGrowthTime);
         vegetable.SetActive(true);
-        print("setActive");
-
+        
         ShowCollectablesVeggies();
         
         _anim.gameObject.SetActive(false);
-        print("setActive");
     }
 
     private void ShowCollectablesVeggies()
     {
-        print("show");
         switch (veggiesToCollect)
         {
             case 3:
@@ -100,12 +93,11 @@ public class GrowingPlant : MonoBehaviour
     
     void OnDestroy()
     {
-        conteneur.RemoveVeggie(data);
+        conteneur.RemoveVeggie(data, index);
     }
 
     public void CollectedChild()
     {
-        print("CollectedChild");
         veggiesToCollect--;
         if (veggiesToCollect == 0)
         {

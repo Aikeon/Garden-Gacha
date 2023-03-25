@@ -17,4 +17,5 @@ MonoBehaviour:
   vegWateringTime: 8
   mapType: 1
   boosterMaterial: {fileID: 2100000, guid: 9097f6c1bbe473248a07ced934221a38, type: 2}
-  basePrice: 1.5
+  sprite: {fileID: 21300000, guid: ae89195922b25754aaf6e73766f9b353, type: 3}
+  basePrice: 4
