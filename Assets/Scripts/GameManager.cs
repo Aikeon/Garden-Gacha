@@ -5,13 +5,6 @@ using System.Runtime.Serialization;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 
-[System.Serializable]
-public class ObjCount<T>
-{
-    public T obj;
-    public int count;
-}
-
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
@@ -21,12 +14,24 @@ public class GameManager : MonoBehaviour
     public float monthDuration;
     [Header("Statistiques")]
     public float totalObtainedMoney = 0;
-    public List<ObjCount<VegType>> soldVegCount;
+    public int soldAil = 0;
+    public int soldCarrottes = 0;
+    public int soldChoux = 0;
+    public int soldHaricots = 0;
+    public int soldOignons = 0;
+    public int soldPoireaux = 0;
+    public int soldTomates = 0;
+    public int totalVegCount = 0;
     public float timeInGame = 0f;
-    public List<ObjCount<Booster.Rarity>> boughtBoosterCount;
+    public int boughtBronze = 0;
+    public int boughtSilver = 0;
+    public int boughtGold = 0;
+    public int totalBoosterCount = 0;
     public int Nsecs;
     private List<float> moneyGainLatestNSecs = new List<float>();
     public float moneyGainInNSecs;
+    public float moneyGainIn30Secs;
+    public float moneyGainIn60Secs;
 
     void Awake()
     {
@@ -60,12 +65,22 @@ public class GameManager : MonoBehaviour
         var latestTotalMoney = totalObtainedMoney;
         yield return new WaitForSeconds(1);
         moneyGainLatestNSecs.Add(totalObtainedMoney - latestTotalMoney);
-        moneyGainInNSecs += totalObtainedMoney - latestTotalMoney;
+        if (moneyGainLatestNSecs.Count > 30)
+        {
+            moneyGainIn30Secs -= moneyGainLatestNSecs[moneyGainLatestNSecs.Count-30];
+        }
+        if (moneyGainLatestNSecs.Count > 60)
+        {
+            moneyGainIn60Secs -= moneyGainLatestNSecs[moneyGainLatestNSecs.Count-60];
+        }
         if (moneyGainLatestNSecs.Count > Nsecs)
         {
             moneyGainInNSecs -= moneyGainLatestNSecs[0];
             moneyGainLatestNSecs.RemoveAt(0);
         }
+        moneyGainInNSecs += totalObtainedMoney - latestTotalMoney;
+        moneyGainIn30Secs += totalObtainedMoney - latestTotalMoney;
+        moneyGainIn60Secs += totalObtainedMoney - latestTotalMoney;
     }
 
     public void SaveGame()
@@ -97,8 +112,21 @@ public class GameManager : MonoBehaviour
             totalObtainedMoney = save.totalObtainedMoney;
             month = save.month;
             timeInGame = save.timeInGame;
-            soldVegCount = save.soldVegCount;
-            boughtBoosterCount = save.boughtBoosterCount;
+
+            soldAil = save.soldAil;
+            soldCarrottes = save.soldCarrottes;
+            soldChoux = save.soldChoux;
+            soldHaricots = save.soldHaricots;
+            soldOignons = save.soldOignons;
+            soldPoireaux = save.soldPoireaux;
+            soldTomates = save.soldTomates;
+            totalVegCount = soldAil + soldCarrottes + soldChoux + soldHaricots + soldOignons + soldPoireaux + soldTomates;
+
+            boughtBronze = save.boughtBronze;
+            boughtSilver = save.boughtSilver;
+            boughtGold = save.boughtGold;
+            totalBoosterCount = boughtBronze + boughtSilver + boughtGold;
+
             foreach (Achievement a in Achievements.Instance.achievements)
             {
                 if (save.achievementsDone.Contains(a.name))
@@ -129,8 +157,18 @@ public class GameManager : MonoBehaviour
         save.totalObtainedMoney = totalObtainedMoney;
         save.month = month;
         save.timeInGame = timeInGame;
-        save.soldVegCount = soldVegCount;
-        save.boughtBoosterCount = boughtBoosterCount;
+
+        save.soldAil = soldAil;
+        save.soldCarrottes = soldCarrottes;
+        save.soldChoux = soldChoux;
+        save.soldHaricots = soldHaricots;
+        save.soldOignons = soldOignons;
+        save.soldPoireaux = soldPoireaux;
+        save.soldTomates = soldTomates;
+
+        save.boughtBronze = boughtBronze;
+        save.boughtSilver = boughtSilver;
+        save.boughtGold = boughtGold;
 
         save.unlockedDirts = new List<int>();
         var numTables = Tables.childCount;
@@ -160,8 +198,16 @@ public class Save
     public float totalObtainedMoney;
     public int month;
     public float timeInGame;
-    public List<ObjCount<VegType>> soldVegCount;
-    public List<ObjCount<Booster.Rarity>> boughtBoosterCount;
+    public int soldAil;
+    public int soldCarrottes;
+    public int soldChoux;
+    public int soldHaricots;
+    public int soldOignons;
+    public int soldPoireaux;
+    public int soldTomates;
+    public int boughtBronze;
+    public int boughtSilver;
+    public int boughtGold;
     public List<string> achievementsDone;
     public List<int> unlockedDirts;
 }

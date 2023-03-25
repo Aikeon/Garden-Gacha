@@ -54,19 +54,13 @@ public class Condition
 
     public void ResetVariables()
     {
+        if (scriptReference == null) return;
         variables_do_not_modify.Clear();
         System.Type myObjectType = scriptReference.GetType();
         System.Reflection.FieldInfo[] memberArray = myObjectType.GetFields();
         foreach (var item in memberArray)
         {
-            //this if is to look only at variables and forget about methods and constructors...
-            Debug.Log(item.ToString().Split(' ')[1]);
             variables_do_not_modify.Add(item.ToString().Split(' ')[1]);
-            if (item.ToString().Split(' ')[1] == "testInt")
-            {
-                var value = item.GetValue(scriptReference);
-                Debug.Log(value);
-            }
         }
     }
 
@@ -80,6 +74,8 @@ public class Condition
 public class Achievement
 {
     public string name;
+    public string description;
+    public float bounty;
     public List<Condition> conditions;
     public bool done;
 }
@@ -137,13 +133,18 @@ public class Achievements : MonoBehaviour
                     }
                 }
                 if (b)
-                achievement.done = b;
+                {
+                    achievement.done = b;
+                    AudioManager.Instance.PlaySFX("AchievementGet");
+                }
+                
             }
         }
     }
 
     void OnValidate()
     {
+        if (achievements == null) return;
         foreach(var achievement in achievements)
         {
             foreach (var condition in achievement.conditions)

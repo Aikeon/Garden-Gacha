@@ -233,10 +233,13 @@ public class Booster : MonoBehaviour
         {
             purchased = true;
             GameManager.Instance.money -= price;
-            foreach (var bc in GameManager.Instance.boughtBoosterCount)
+            switch (rarity)
             {
-                if (rarity == bc.obj) bc.count++;
+                case Rarity.Bronze: GameManager.Instance.boughtBronze++; break;
+                case Rarity.Silver: GameManager.Instance.boughtSilver++; break;
+                case Rarity.Gold: GameManager.Instance.boughtGold++; break;
             }
+            GameManager.Instance.totalBoosterCount++;
            // TheGuyBehaviour.Instance.state = 0;
             origin.pickedBooster();
         }
@@ -282,10 +285,13 @@ public class Booster : MonoBehaviour
         {
             purchased = true;
             GameManager.Instance.money -= price;
-            foreach (var bc in GameManager.Instance.boughtBoosterCount)
+            switch (rarity)
             {
-                if (rarity == bc.obj) bc.count++;
+                case Rarity.Bronze: GameManager.Instance.boughtBronze++; break;
+                case Rarity.Silver: GameManager.Instance.boughtSilver++; break;
+                case Rarity.Gold: GameManager.Instance.boughtGold++; break;
             }
+            GameManager.Instance.totalBoosterCount++;
           //  TheGuyBehaviour.Instance.state = 0;
             origin.pickedBooster();
         }

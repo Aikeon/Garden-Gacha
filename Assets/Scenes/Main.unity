@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.00062873657, g: 0.023772009, b: 0.021402469, a: 1}
+  m_IndirectSpecularColor: {r: 0.01449584, g: 0.6845724, b: 0.99121004, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -7245,8 +7245,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musics: []
   sfx:
-  - name: 
-    clip: {fileID: 0}
+  - name: AchievementGet
+    clip: {fileID: 8300000, guid: 2241707c89018cb40bee0c588ca8cafa, type: 3}
   musicSource: {fileID: 183733764}
   sfxSource: {fileID: 250488716}
 --- !u!4 &415925448
@@ -12885,6 +12885,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1602882553}
   - component: {fileID: 1602882552}
+  - component: {fileID: 1602882554}
   m_Layer: 0
   m_Name: GAME MANAGER
   m_TagString: Untagged
@@ -12909,11 +12910,23 @@ MonoBehaviour:
   Tables: {fileID: 0}
   monthDuration: 60
   totalObtainedMoney: 0
-  soldVegCount: []
+  soldAil: 0
+  soldCarrottes: 0
+  soldChoux: 0
+  soldHaricots: 0
+  soldOignons: 0
+  soldPoireaux: 0
+  soldTomates: 0
+  totalVegCount: 0
   timeInGame: 0
-  boughtBoosterCount: []
-  Nsecs: 0
+  boughtBronze: 0
+  boughtSilver: 0
+  boughtGold: 0
+  totalBoosterCount: 0
+  Nsecs: 120
   moneyGainInNSecs: 0
+  moneyGainIn30Secs: 0
+  moneyGainIn60Secs: 0
 --- !u!4 &1602882553
 Transform:
   m_ObjectHideFlags: 0
@@ -12929,6 +12942,913 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1602882554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1602882551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff09d91578c9a7546b1bf7e5c8a08870, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  achievements:
+  - name: "Un d\xE9but"
+    description: Gagnez 25$ au total.
+    bounty: 15
+    conditions:
+    - scriptReference: {fileID: 1602882552}
+      variables_do_not_modify:
+      - Instance
+      - money
+      - month
+      - Tables
+      - monthDuration
+      - totalObtainedMoney
+      - soldAil
+      - soldCarrottes
+      - soldChoux
+      - soldHaricots
+      - soldOignons
+      - soldPoireaux
+      - soldTomates
+      - totalVegCount
+      - timeInGame
+      - boughtBronze
+      - boughtSilver
+      - boughtGold
+      - totalBoosterCount
+      - Nsecs
+      - moneyGainInNSecs
+      - moneyGainIn30Secs
+      - moneyGainIn60Secs
+      variable: totalObtainedMoney
+      valueCheck: 25
+      conditionType: 2
+    done: 0
+  - name: Devenir riche
+    description: Gagnez 150$ au total.
+    bounty: 50
+    conditions:
+    - scriptReference: {fileID: 1602882552}
+      variables_do_not_modify:
+      - Instance
+      - money
+      - month
+      - Tables
+      - monthDuration
+      - totalObtainedMoney
+      - soldAil
+      - soldCarrottes
+      - soldChoux
+      - soldHaricots
+      - soldOignons
+      - soldPoireaux
+      - soldTomates
+      - totalVegCount
+      - timeInGame
+      - boughtBronze
+      - boughtSilver
+      - boughtGold
+      - totalBoosterCount
+      - Nsecs
+      - moneyGainInNSecs
+      - moneyGainIn30Secs
+      - moneyGainIn60Secs
+      variable: totalObtainedMoney
+      valueCheck: 150
+      conditionType: 2
+    done: 0
+  - name: Plus que riche !
+    description: Gagnez 500$ au total.
+    bounty: 200
+    conditions:
+    - scriptReference: {fileID: 1602882552}
+      variables_do_not_modify:
+      - Instance
+      - money
+      - month
+      - Tables
+      - monthDuration
+      - totalObtainedMoney
+      - soldAil
+      - soldCarrottes
+      - soldChoux
+      - soldHaricots
+      - soldOignons
+      - soldPoireaux
+      - soldTomates
+      - totalVegCount
+      - timeInGame
+      - boughtBronze
+      - boughtSilver
+      - boughtGold
+      - totalBoosterCount
+      - Nsecs
+      - moneyGainInNSecs
+      - moneyGainIn30Secs
+      - moneyGainIn60Secs
+      variable: totalObtainedMoney
+      valueCheck: 500
+      conditionType: 2
+    done: 0
+  - name: Ma tirelire
+    description: Gardez 15$ sur vous.
+    bounty: 5
+    conditions:
+    - scriptReference: {fileID: 1602882552}
+      variables_do_not_modify:
+      - Instance
+      - money
+      - month
+      - Tables
+      - monthDuration
+      - totalObtainedMoney
+      - soldAil
+      - soldCarrottes
+      - soldChoux
+      - soldHaricots
+      - soldOignons
+      - soldPoireaux
+      - soldTomates
+      - totalVegCount
+      - timeInGame
+      - boughtBronze
+      - boughtSilver
+      - boughtGold
+      - totalBoosterCount
+      - Nsecs
+      - moneyGainInNSecs
+      - moneyGainIn30Secs
+      - moneyGainIn60Secs
+      variable: money
+      valueCheck: 15
+      conditionType: 2
+    done: 0
+  - name: Economies
+    description: Gardez 50$ sur vous.
+    bounty: 20
+    conditions:
+    - scriptReference: {fileID: 1602882552}
+      variables_do_not_modify:
+      - Instance
+      - money
+      - month
+      - Tables
+      - monthDuration
+      - totalObtainedMoney
+      - soldAil
+      - soldCarrottes
+      - soldChoux
+      - soldHaricots
+      - soldOignons
+      - soldPoireaux
+      - soldTomates
+      - totalVegCount
+      - timeInGame
+      - boughtBronze
+      - boughtSilver
+      - boughtGold
+      - totalBoosterCount
+      - Nsecs
+      - moneyGainInNSecs
+      - moneyGainIn30Secs
+      - moneyGainIn60Secs
+      variable: money
+      valueCheck: 50
+      conditionType: 2
+    done: 0
+  - name: Donnez-moi un livret A !
+    description: Gardez 150$ sur vous.
+    bounty: 50
+    conditions:
+    - scriptReference: {fileID: 1602882552}
+      variables_do_not_modify:
+      - Instance
+      - money
+      - month
+      - Tables
+      - monthDuration
+      - totalObtainedMoney
+      - soldAil
+      - soldCarrottes
+      - soldChoux
+      - soldHaricots
+      - soldOignons
+      - soldPoireaux
+      - soldTomates
+      - totalVegCount
+      - timeInGame
+      - boughtBronze
+      - boughtSilver
+      - boughtGold
+      - totalBoosterCount
+      - Nsecs
+      - moneyGainInNSecs
+      - moneyGainIn30Secs
+      - moneyGainIn60Secs
+      variable: money
+      valueCheck: 150
+      conditionType: 2
+    done: 0
+  - name: Hobby
+    description: Jouez 10 minutes.
+    bounty: 5
+    conditions:
+    - scriptReference: {fileID: 1602882552}
+      variables_do_not_modify:
+      - Instance
+      - money
+      - month
+      - Tables
+      - monthDuration
+      - totalObtainedMoney
+      - soldAil
+      - soldCarrottes
+      - soldChoux
+      - soldHaricots
+      - soldOignons
+      - soldPoireaux
+      - soldTomates
+      - totalVegCount
+      - timeInGame
+      - boughtBronze
+      - boughtSilver
+      - boughtGold
+      - totalBoosterCount
+      - Nsecs
+      - moneyGainInNSecs
+      - moneyGainIn30Secs
+      - moneyGainIn60Secs
+      variable: timeInGame
+      valueCheck: 600
+      conditionType: 2
+    done: 0
+  - name: "Job \xE9tudiant"
+    description: Jouez une heure.
+    bounty: 25
+    conditions:
+    - scriptReference: {fileID: 1602882552}
+      variables_do_not_modify:
+      - Instance
+      - money
+      - month
+      - Tables
+      - monthDuration
+      - totalObtainedMoney
+      - soldAil
+      - soldCarrottes
+      - soldChoux
+      - soldHaricots
+      - soldOignons
+      - soldPoireaux
+      - soldTomates
+      - totalVegCount
+      - timeInGame
+      - boughtBronze
+      - boughtSilver
+      - boughtGold
+      - totalBoosterCount
+      - Nsecs
+      - moneyGainInNSecs
+      - moneyGainIn30Secs
+      - moneyGainIn60Secs
+      variable: timeInGame
+      valueCheck: 3600
+      conditionType: 2
+    done: 0
+  - name: "Employ\xE9"
+    description: Jouez quatre heures.
+    bounty: 100
+    conditions:
+    - scriptReference: {fileID: 1602882552}
+      variables_do_not_modify:
+      - Instance
+      - money
+      - month
+      - Tables
+      - monthDuration
+      - totalObtainedMoney
+      - soldAil
+      - soldCarrottes
+      - soldChoux
+      - soldHaricots
+      - soldOignons
+      - soldPoireaux
+      - soldTomates
+      - totalVegCount
+      - timeInGame
+      - boughtBronze
+      - boughtSilver
+      - boughtGold
+      - totalBoosterCount
+      - Nsecs
+      - moneyGainInNSecs
+      - moneyGainIn30Secs
+      - moneyGainIn60Secs
+      variable: timeInGame
+      valueCheck: 14400
+      conditionType: 2
+    done: 0
+  - name: Tu es addict.
+    description: Jouez 12 heures.
+    bounty: 100
+    conditions:
+    - scriptReference: {fileID: 1602882552}
+      variables_do_not_modify:
+      - Instance
+      - money
+      - month
+      - Tables
+      - monthDuration
+      - totalObtainedMoney
+      - soldAil
+      - soldCarrottes
+      - soldChoux
+      - soldHaricots
+      - soldOignons
+      - soldPoireaux
+      - soldTomates
+      - totalVegCount
+      - timeInGame
+      - boughtBronze
+      - boughtSilver
+      - boughtGold
+      - totalBoosterCount
+      - Nsecs
+      - moneyGainInNSecs
+      - moneyGainIn30Secs
+      - moneyGainIn60Secs
+      variable: timeInGame
+      valueCheck: 43200
+      conditionType: 2
+    done: 0
+  - name: "Premi\xE8re vente"
+    description: Vendez un produit.
+    bounty: 2
+    conditions:
+    - scriptReference: {fileID: 1602882552}
+      variables_do_not_modify:
+      - Instance
+      - money
+      - month
+      - Tables
+      - monthDuration
+      - totalObtainedMoney
+      - soldAil
+      - soldCarrottes
+      - soldChoux
+      - soldHaricots
+      - soldOignons
+      - soldPoireaux
+      - soldTomates
+      - totalVegCount
+      - timeInGame
+      - boughtBronze
+      - boughtSilver
+      - boughtGold
+      - totalBoosterCount
+      - Nsecs
+      - moneyGainInNSecs
+      - moneyGainIn30Secs
+      - moneyGainIn60Secs
+      variable: totalVegCount
+      valueCheck: 1
+      conditionType: 2
+    done: 0
+  - name: Apprenti agriculteur
+    description: Vendez 10 produits.
+    bounty: 10
+    conditions:
+    - scriptReference: {fileID: 1602882552}
+      variables_do_not_modify:
+      - Instance
+      - money
+      - month
+      - Tables
+      - monthDuration
+      - totalObtainedMoney
+      - soldAil
+      - soldCarrottes
+      - soldChoux
+      - soldHaricots
+      - soldOignons
+      - soldPoireaux
+      - soldTomates
+      - totalVegCount
+      - timeInGame
+      - boughtBronze
+      - boughtSilver
+      - boughtGold
+      - totalBoosterCount
+      - Nsecs
+      - moneyGainInNSecs
+      - moneyGainIn30Secs
+      - moneyGainIn60Secs
+      variable: totalVegCount
+      valueCheck: 10
+      conditionType: 2
+    done: 0
+  - name: Vrai farmer
+    description: Vendez 100 produits.
+    bounty: 50
+    conditions:
+    - scriptReference: {fileID: 1602882552}
+      variables_do_not_modify:
+      - Instance
+      - money
+      - month
+      - Tables
+      - monthDuration
+      - totalObtainedMoney
+      - soldAil
+      - soldCarrottes
+      - soldChoux
+      - soldHaricots
+      - soldOignons
+      - soldPoireaux
+      - soldTomates
+      - totalVegCount
+      - timeInGame
+      - boughtBronze
+      - boughtSilver
+      - boughtGold
+      - totalBoosterCount
+      - Nsecs
+      - moneyGainInNSecs
+      - moneyGainIn30Secs
+      - moneyGainIn60Secs
+      variable: totalVegCount
+      valueCheck: 100
+      conditionType: 2
+    done: 0
+  - name: "Tout \xE7a, c'est bio ?"
+    description: Vendez 1000 produits.
+    bounty: 250
+    conditions:
+    - scriptReference: {fileID: 1602882552}
+      variables_do_not_modify:
+      - Instance
+      - money
+      - month
+      - Tables
+      - monthDuration
+      - totalObtainedMoney
+      - soldAil
+      - soldCarrottes
+      - soldChoux
+      - soldHaricots
+      - soldOignons
+      - soldPoireaux
+      - soldTomates
+      - totalVegCount
+      - timeInGame
+      - boughtBronze
+      - boughtSilver
+      - boughtGold
+      - totalBoosterCount
+      - Nsecs
+      - moneyGainInNSecs
+      - moneyGainIn30Secs
+      - moneyGainIn60Secs
+      variable: totalVegCount
+      valueCheck: 1000
+      conditionType: 2
+    done: 0
+  - name: "Diversit\xE9"
+    description: Vendez 5 de chaque produit.
+    bounty: 30
+    conditions:
+    - scriptReference: {fileID: 1602882552}
+      variables_do_not_modify:
+      - Instance
+      - money
+      - month
+      - Tables
+      - monthDuration
+      - totalObtainedMoney
+      - soldAil
+      - soldCarrottes
+      - soldChoux
+      - soldHaricots
+      - soldOignons
+      - soldPoireaux
+      - soldTomates
+      - totalVegCount
+      - timeInGame
+      - boughtBronze
+      - boughtSilver
+      - boughtGold
+      - totalBoosterCount
+      - Nsecs
+      - moneyGainInNSecs
+      - moneyGainIn30Secs
+      - moneyGainIn60Secs
+      variable: soldAil
+      valueCheck: 5
+      conditionType: 2
+    - scriptReference: {fileID: 1602882552}
+      variables_do_not_modify:
+      - Instance
+      - money
+      - month
+      - Tables
+      - monthDuration
+      - totalObtainedMoney
+      - soldAil
+      - soldCarrottes
+      - soldChoux
+      - soldHaricots
+      - soldOignons
+      - soldPoireaux
+      - soldTomates
+      - totalVegCount
+      - timeInGame
+      - boughtBronze
+      - boughtSilver
+      - boughtGold
+      - totalBoosterCount
+      - Nsecs
+      - moneyGainInNSecs
+      - moneyGainIn30Secs
+      - moneyGainIn60Secs
+      variable: soldCarrottes
+      valueCheck: 5
+      conditionType: 2
+    - scriptReference: {fileID: 1602882552}
+      variables_do_not_modify:
+      - Instance
+      - money
+      - month
+      - Tables
+      - monthDuration
+      - totalObtainedMoney
+      - soldAil
+      - soldCarrottes
+      - soldChoux
+      - soldHaricots
+      - soldOignons
+      - soldPoireaux
+      - soldTomates
+      - totalVegCount
+      - timeInGame
+      - boughtBronze
+      - boughtSilver
+      - boughtGold
+      - totalBoosterCount
+      - Nsecs
+      - moneyGainInNSecs
+      - moneyGainIn30Secs
+      - moneyGainIn60Secs
+      variable: soldChoux
+      valueCheck: 5
+      conditionType: 2
+    - scriptReference: {fileID: 1602882552}
+      variables_do_not_modify:
+      - Instance
+      - money
+      - month
+      - Tables
+      - monthDuration
+      - totalObtainedMoney
+      - soldAil
+      - soldCarrottes
+      - soldChoux
+      - soldHaricots
+      - soldOignons
+      - soldPoireaux
+      - soldTomates
+      - totalVegCount
+      - timeInGame
+      - boughtBronze
+      - boughtSilver
+      - boughtGold
+      - totalBoosterCount
+      - Nsecs
+      - moneyGainInNSecs
+      - moneyGainIn30Secs
+      - moneyGainIn60Secs
+      variable: soldHaricots
+      valueCheck: 5
+      conditionType: 2
+    - scriptReference: {fileID: 1602882552}
+      variables_do_not_modify:
+      - Instance
+      - money
+      - month
+      - Tables
+      - monthDuration
+      - totalObtainedMoney
+      - soldAil
+      - soldCarrottes
+      - soldChoux
+      - soldHaricots
+      - soldOignons
+      - soldPoireaux
+      - soldTomates
+      - totalVegCount
+      - timeInGame
+      - boughtBronze
+      - boughtSilver
+      - boughtGold
+      - totalBoosterCount
+      - Nsecs
+      - moneyGainInNSecs
+      - moneyGainIn30Secs
+      - moneyGainIn60Secs
+      variable: soldOignons
+      valueCheck: 5
+      conditionType: 2
+    - scriptReference: {fileID: 1602882552}
+      variables_do_not_modify:
+      - Instance
+      - money
+      - month
+      - Tables
+      - monthDuration
+      - totalObtainedMoney
+      - soldAil
+      - soldCarrottes
+      - soldChoux
+      - soldHaricots
+      - soldOignons
+      - soldPoireaux
+      - soldTomates
+      - totalVegCount
+      - timeInGame
+      - boughtBronze
+      - boughtSilver
+      - boughtGold
+      - totalBoosterCount
+      - Nsecs
+      - moneyGainInNSecs
+      - moneyGainIn30Secs
+      - moneyGainIn60Secs
+      variable: soldPoireaux
+      valueCheck: 5
+      conditionType: 2
+    - scriptReference: {fileID: 1602882552}
+      variables_do_not_modify:
+      - Instance
+      - money
+      - month
+      - Tables
+      - monthDuration
+      - totalObtainedMoney
+      - soldAil
+      - soldCarrottes
+      - soldChoux
+      - soldHaricots
+      - soldOignons
+      - soldPoireaux
+      - soldTomates
+      - totalVegCount
+      - timeInGame
+      - boughtBronze
+      - boughtSilver
+      - boughtGold
+      - totalBoosterCount
+      - Nsecs
+      - moneyGainInNSecs
+      - moneyGainIn30Secs
+      - moneyGainIn60Secs
+      variable: soldTomates
+      valueCheck: 5
+      conditionType: 2
+    done: 0
+  - name: Bon, faut commencer...
+    description: Achetez 5 boosters de bronze.
+    bounty: 5
+    conditions:
+    - scriptReference: {fileID: 1602882552}
+      variables_do_not_modify:
+      - Instance
+      - money
+      - month
+      - Tables
+      - monthDuration
+      - totalObtainedMoney
+      - soldAil
+      - soldCarrottes
+      - soldChoux
+      - soldHaricots
+      - soldOignons
+      - soldPoireaux
+      - soldTomates
+      - totalVegCount
+      - timeInGame
+      - boughtBronze
+      - boughtSilver
+      - boughtGold
+      - totalBoosterCount
+      - Nsecs
+      - moneyGainInNSecs
+      - moneyGainIn30Secs
+      - moneyGainIn60Secs
+      variable: boughtBronze
+      valueCheck: 5
+      conditionType: 2
+    done: 0
+  - name: "Tu peux acheter mieux que \xE7a..."
+    description: Achetez 10 boosters de bronze.
+    bounty: 5
+    conditions:
+    - scriptReference: {fileID: 1602882552}
+      variables_do_not_modify:
+      - Instance
+      - money
+      - month
+      - Tables
+      - monthDuration
+      - totalObtainedMoney
+      - soldAil
+      - soldCarrottes
+      - soldChoux
+      - soldHaricots
+      - soldOignons
+      - soldPoireaux
+      - soldTomates
+      - totalVegCount
+      - timeInGame
+      - boughtBronze
+      - boughtSilver
+      - boughtGold
+      - totalBoosterCount
+      - Nsecs
+      - moneyGainInNSecs
+      - moneyGainIn30Secs
+      - moneyGainIn60Secs
+      variable: boughtBronze
+      valueCheck: 10
+      conditionType: 2
+    done: 0
+  - name: "Le vendeur n'a jamais \xE9t\xE9 si d\xE9\xE7u"
+    description: Achetez 25 boosters de bronze.
+    bounty: 10
+    conditions:
+    - scriptReference: {fileID: 1602882552}
+      variables_do_not_modify:
+      - Instance
+      - money
+      - month
+      - Tables
+      - monthDuration
+      - totalObtainedMoney
+      - soldAil
+      - soldCarrottes
+      - soldChoux
+      - soldHaricots
+      - soldOignons
+      - soldPoireaux
+      - soldTomates
+      - totalVegCount
+      - timeInGame
+      - boughtBronze
+      - boughtSilver
+      - boughtGold
+      - totalBoosterCount
+      - Nsecs
+      - moneyGainInNSecs
+      - moneyGainIn30Secs
+      - moneyGainIn60Secs
+      variable: boughtBronze
+      valueCheck: 25
+      conditionType: 2
+    done: 0
+  - name: POURQUOI
+    description: Achetez 100 boosters de bronze.
+    bounty: 0
+    conditions:
+    - scriptReference: {fileID: 1602882552}
+      variables_do_not_modify:
+      - Instance
+      - money
+      - month
+      - Tables
+      - monthDuration
+      - totalObtainedMoney
+      - soldAil
+      - soldCarrottes
+      - soldChoux
+      - soldHaricots
+      - soldOignons
+      - soldPoireaux
+      - soldTomates
+      - totalVegCount
+      - timeInGame
+      - boughtBronze
+      - boughtSilver
+      - boughtGold
+      - totalBoosterCount
+      - Nsecs
+      - moneyGainInNSecs
+      - moneyGainIn30Secs
+      - moneyGainIn60Secs
+      variable: boughtBronze
+      valueCheck: 100
+      conditionType: 2
+    done: 0
+  - name: Vendre *vite*
+    description: En 60 secondes, gagnez 10$.
+    bounty: 10
+    conditions:
+    - scriptReference: {fileID: 1602882552}
+      variables_do_not_modify:
+      - Instance
+      - money
+      - month
+      - Tables
+      - monthDuration
+      - totalObtainedMoney
+      - soldAil
+      - soldCarrottes
+      - soldChoux
+      - soldHaricots
+      - soldOignons
+      - soldPoireaux
+      - soldTomates
+      - totalVegCount
+      - timeInGame
+      - boughtBronze
+      - boughtSilver
+      - boughtGold
+      - totalBoosterCount
+      - Nsecs
+      - moneyGainInNSecs
+      - moneyGainIn30Secs
+      - moneyGainIn60Secs
+      variable: moneyGainIn60Secs
+      valueCheck: 10
+      conditionType: 2
+    done: 0
+  - name: "Vendre *tr\xE8s vite*"
+    description: En 30 secondes, gagnez 20$.
+    bounty: 25
+    conditions:
+    - scriptReference: {fileID: 1602882552}
+      variables_do_not_modify:
+      - Instance
+      - money
+      - month
+      - Tables
+      - monthDuration
+      - totalObtainedMoney
+      - soldAil
+      - soldCarrottes
+      - soldChoux
+      - soldHaricots
+      - soldOignons
+      - soldPoireaux
+      - soldTomates
+      - totalVegCount
+      - timeInGame
+      - boughtBronze
+      - boughtSilver
+      - boughtGold
+      - totalBoosterCount
+      - Nsecs
+      - moneyGainInNSecs
+      - moneyGainIn30Secs
+      - moneyGainIn60Secs
+      variable: moneyGainIn30Secs
+      valueCheck: 20
+      conditionType: 2
+    done: 0
+  - name: Le stock va pourrir...
+    description: En 30 secondes, gagnez 50$.
+    bounty: 100
+    conditions:
+    - scriptReference: {fileID: 1602882552}
+      variables_do_not_modify:
+      - Instance
+      - money
+      - month
+      - Tables
+      - monthDuration
+      - totalObtainedMoney
+      - soldAil
+      - soldCarrottes
+      - soldChoux
+      - soldHaricots
+      - soldOignons
+      - soldPoireaux
+      - soldTomates
+      - totalVegCount
+      - timeInGame
+      - boughtBronze
+      - boughtSilver
+      - boughtGold
+      - totalBoosterCount
+      - Nsecs
+      - moneyGainInNSecs
+      - moneyGainIn30Secs
+      - moneyGainIn60Secs
+      variable: moneyGainIn30Secs
+      valueCheck: 50
+      conditionType: 2
+    done: 0
 --- !u!1001 &1606356902
 PrefabInstance:
   m_ObjectHideFlags: 0
