@@ -303,6 +303,39 @@ public class Book : MonoBehaviour {
         if (enableShadowEffect) Shadow.gameObject.SetActive(true);
         UpdateBookRTLToPoint(f);
     }
+    
+    public void DragToPageLTRToPoint(Vector3 point, int page)
+    {
+        if (currentPage >= bookPages.Length) return;
+        pageDragging = true;
+        mode = FlipMode.RightToLeft;
+        f = point;
+        Left.sprite = (currentPage < bookPages.Length) ? bookPages[currentPage] : background;
+
+
+        currentPage = page;
+
+
+        NextPageClip.rectTransform.pivot = new Vector2(0, 0.12f);
+        ClippingPlane.rectTransform.pivot = new Vector2(1, 0.35f);
+
+        Left.gameObject.SetActive(true);
+        Left.rectTransform.pivot = new Vector2(0, 0);
+        Left.transform.position = RightNext.transform.position;
+        Left.transform.eulerAngles = new Vector3(0, 0, 0);
+        Left.transform.SetAsFirstSibling();
+        
+        Right.gameObject.SetActive(true);
+        Right.transform.position = RightNext.transform.position;
+        Right.transform.eulerAngles = new Vector3(0, 0, 0);
+        Right.sprite = (currentPage < bookPages.Length - 1) ? bookPages[currentPage + 1] : background;
+
+        RightNext.sprite = (currentPage < bookPages.Length - 2) ? bookPages[currentPage + 2] : background;
+
+        LeftNext.transform.SetAsFirstSibling();
+        if (enableShadowEffect) Shadow.gameObject.SetActive(true);
+        UpdateBookRTLToPoint(f);
+    }
     public void OnMouseDragRightPage()
     {
         if (interactable)

@@ -39,6 +39,19 @@ public class AutoFlip : MonoBehaviour {
         float dx = (xl)*2 / AnimationFramesCount;
         StartCoroutine(FlipRTL(xc, xl, h, frameTime, dx));
     }
+    public void FlipRTLToPage(int page)
+    {
+        if (isFlipping) return;
+        if (ControledBook.currentPage >= ControledBook.TotalPageCount) return;
+        isFlipping = true;
+        float frameTime = PageFlipTime / AnimationFramesCount;
+        float xc = (ControledBook.EndBottomRight.x + ControledBook.EndBottomLeft.x) / 2;
+        float xl = ((ControledBook.EndBottomRight.x - ControledBook.EndBottomLeft.x) / 2) * 0.9f;
+        //float h =  ControledBook.Height * 0.5f;
+        float h = Mathf.Abs(ControledBook.EndBottomRight.y) * 0.9f;
+        float dx = (xl)*2 / AnimationFramesCount;
+        StartCoroutine(FlipRTLToPage(page, xc, xl, h, frameTime, dx));
+    }
     public void FlipLeftPage()
     {
         if (isFlipping) return;
@@ -99,6 +112,24 @@ public class AutoFlip : MonoBehaviour {
         float y = (-h / (xl * xl)) * (x - xc) * (x - xc);
 
         ControledBook.DragRightPageToPoint(new Vector3(x, y, 0));
+        for (int i = 0; i < AnimationFramesCount; i++)
+        {
+            y = (-h / (xl * xl)) * (x - xc) * (x - xc);
+            ControledBook.UpdateBookRTLToPoint(new Vector3(x, y, 0));
+            yield return new WaitForSeconds(frameTime);
+            x -= dx;
+        }
+        ControledBook.ReleasePage();
+    }
+    
+
+    IEnumerator FlipRTLToPage(int page, float xc, float xl, float h, float frameTime, float dx)
+    {
+        float x = xc + xl;
+        float y = (-h / (xl * xl)) * (x - xc) * (x - xc);
+
+        Debug.Log("oui");
+        ControledBook.DragToPageLTRToPoint(new Vector3(x, y, 0), page);
         for (int i = 0; i < AnimationFramesCount; i++)
         {
             y = (-h / (xl * xl)) * (x - xc) * (x - xc);
