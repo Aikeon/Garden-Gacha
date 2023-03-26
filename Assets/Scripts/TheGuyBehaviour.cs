@@ -34,6 +34,7 @@ public class TheGuyBehaviour : MonoBehaviour
     {
         if(isAnim) return;
         isAnim = true;
+        AudioManager.Instance.PlaySFX("hohooooo");
         anim.CrossFade("Satisfied",0.2f);
     }
 
@@ -41,6 +42,7 @@ public class TheGuyBehaviour : MonoBehaviour
     {
         if(isAnim) return;
         isAnim = true;
+        AudioManager.Instance.PlaySFX("hohoho");
         anim.CrossFade("Okay",0.2f);
     }
     
@@ -48,6 +50,7 @@ public class TheGuyBehaviour : MonoBehaviour
     {
         if(isAnim) return;
         isAnim = true;
+        AudioManager.Instance.PlaySFX("growl");
         anim.CrossFade("Disapointed",0.2f);
     }
 

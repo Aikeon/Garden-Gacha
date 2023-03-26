@@ -2558,6 +2558,94 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2977910530633221590, guid: 3f2405e89b1702a46b7dff3d489fa860, type: 3}
+      propertyPath: sfx.Array.size
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2977910530633221590, guid: 3f2405e89b1702a46b7dff3d489fa860, type: 3}
+      propertyPath: musics.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2977910530633221590, guid: 3f2405e89b1702a46b7dff3d489fa860, type: 3}
+      propertyPath: sfx.Array.data[1].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 95560132077ba6346a07302ce4884231, type: 3}
+    - target: {fileID: 2977910530633221590, guid: 3f2405e89b1702a46b7dff3d489fa860, type: 3}
+      propertyPath: sfx.Array.data[1].name
+      value: moneyGain
+      objectReference: {fileID: 0}
+    - target: {fileID: 2977910530633221590, guid: 3f2405e89b1702a46b7dff3d489fa860, type: 3}
+      propertyPath: sfx.Array.data[2].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 2d5b611c19748da498785794ede476f5, type: 3}
+    - target: {fileID: 2977910530633221590, guid: 3f2405e89b1702a46b7dff3d489fa860, type: 3}
+      propertyPath: sfx.Array.data[2].name
+      value: rippingSeedBag
+      objectReference: {fileID: 0}
+    - target: {fileID: 2977910530633221590, guid: 3f2405e89b1702a46b7dff3d489fa860, type: 3}
+      propertyPath: sfx.Array.data[3].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 085d5f33e81d3d8489b7509b2d940e69, type: 3}
+    - target: {fileID: 2977910530633221590, guid: 3f2405e89b1702a46b7dff3d489fa860, type: 3}
+      propertyPath: sfx.Array.data[3].name
+      value: plantSeed
+      objectReference: {fileID: 0}
+    - target: {fileID: 2977910530633221590, guid: 3f2405e89b1702a46b7dff3d489fa860, type: 3}
+      propertyPath: sfx.Array.data[4].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: d8527b47f956c874ca1fa1c2a98a80f1, type: 3}
+    - target: {fileID: 2977910530633221590, guid: 3f2405e89b1702a46b7dff3d489fa860, type: 3}
+      propertyPath: sfx.Array.data[4].name
+      value: growl
+      objectReference: {fileID: 0}
+    - target: {fileID: 2977910530633221590, guid: 3f2405e89b1702a46b7dff3d489fa860, type: 3}
+      propertyPath: sfx.Array.data[5].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 4c891e52e84ad164dad20914debd1e94, type: 3}
+    - target: {fileID: 2977910530633221590, guid: 3f2405e89b1702a46b7dff3d489fa860, type: 3}
+      propertyPath: sfx.Array.data[5].name
+      value: hohoho
+      objectReference: {fileID: 0}
+    - target: {fileID: 2977910530633221590, guid: 3f2405e89b1702a46b7dff3d489fa860, type: 3}
+      propertyPath: sfx.Array.data[6].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 665c1337a8f36f44f8ec2255c4e4a0d0, type: 3}
+    - target: {fileID: 2977910530633221590, guid: 3f2405e89b1702a46b7dff3d489fa860, type: 3}
+      propertyPath: sfx.Array.data[6].name
+      value: hohooooo
+      objectReference: {fileID: 0}
+    - target: {fileID: 2977910530633221590, guid: 3f2405e89b1702a46b7dff3d489fa860, type: 3}
+      propertyPath: sfx.Array.data[7].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 50325c8494b89d34d9b7353db34c09dd, type: 3}
+    - target: {fileID: 2977910530633221590, guid: 3f2405e89b1702a46b7dff3d489fa860, type: 3}
+      propertyPath: sfx.Array.data[7].name
+      value: bookPageTurn
+      objectReference: {fileID: 0}
+    - target: {fileID: 2977910530633221590, guid: 3f2405e89b1702a46b7dff3d489fa860, type: 3}
+      propertyPath: sfx.Array.data[8].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 4a73a967f7f7a234495538ab89c5999a, type: 3}
+    - target: {fileID: 2977910530633221590, guid: 3f2405e89b1702a46b7dff3d489fa860, type: 3}
+      propertyPath: sfx.Array.data[8].name
+      value: plantFinishedGrowing
+      objectReference: {fileID: 0}
+    - target: {fileID: 2977910530633221590, guid: 3f2405e89b1702a46b7dff3d489fa860, type: 3}
+      propertyPath: sfx.Array.data[9].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 10c532818131c374b84249de15d750af, type: 3}
+    - target: {fileID: 2977910530633221590, guid: 3f2405e89b1702a46b7dff3d489fa860, type: 3}
+      propertyPath: sfx.Array.data[9].name
+      value: harvest
+      objectReference: {fileID: 0}
+    - target: {fileID: 2977910530633221590, guid: 3f2405e89b1702a46b7dff3d489fa860, type: 3}
+      propertyPath: musics.Array.data[0].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 49e28c9f301170c4a9386200d4b679a2, type: 3}
+    - target: {fileID: 2977910530633221590, guid: 3f2405e89b1702a46b7dff3d489fa860, type: 3}
+      propertyPath: musics.Array.data[0].name
+      value: mainTheme
+      objectReference: {fileID: 0}
     - target: {fileID: 2977910530633221591, guid: 3f2405e89b1702a46b7dff3d489fa860, type: 3}
       propertyPath: m_Name
       value: AudioManager
@@ -12607,6 +12695,107 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 479256, guid: 220c818457a8d2441bf84edb4edee095, type: 3}
   m_PrefabInstance: {fileID: 1568989254}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1568989256 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 179056, guid: 220c818457a8d2441bf84edb4edee095, type: 3}
+  m_PrefabInstance: {fileID: 1568989254}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &1568989257
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1568989256}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: b3ca05fc207f89a4e94b3eceed43f9bb, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1589263759
 GameObject:
   m_ObjectHideFlags: 0

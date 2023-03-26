@@ -108,6 +108,7 @@ public class Booster : MonoBehaviour
         {
             if (leftGrabbed && rightGrabbed && Vector3.Dot(leftVelocity, rightVelocity) < -4f)
             {
+                AudioManager.Instance.PlaySFX("rippingSeedBag");
                 SpawnSeeds();
                 Destroy(middle);
                 left.transform.SetParent(null);

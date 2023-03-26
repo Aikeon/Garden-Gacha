@@ -19,8 +19,7 @@ public class SellingBucket : MonoBehaviour
         {
             ParticleSystem explosion = Instantiate(veg.soldExplosion, explosionTransform.position, explosionTransform.rotation);
             explosion.Play();
-            // audioSource.pitch = 1 + Random.Range(-0.2f,0.2f);
-            // audioSource.PlayOneShot(sfx);
+            AudioManager.Instance.PlaySFX("moneyGain");
             switch (veg.origin.data.mapType)
             {
                 case VegType.Tomate: GameManager.Instance.soldTomates++; break;

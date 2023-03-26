@@ -10,6 +10,7 @@ public class Graine : MonoBehaviour
     {
         if (collisionInfo.collider.gameObject.TryGetComponent<GrowthBucket>(out var bucket))
         {
+            AudioManager.Instance.PlaySFX("plantSeed");
             bucket.AddVeggie(vegData, collisionInfo.GetContact(0).point);
             Destroy(gameObject);
         }

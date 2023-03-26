@@ -7,6 +7,8 @@ public class WateringCan : MonoBehaviour
 {
     
     [SerializeField] private ParticleSystem waterParticles;
+
+    private AudioSource _audioSource;
     
     private bool _isWatering = false;
     private Transform _wateringCanTransform;
@@ -20,6 +22,7 @@ public class WateringCan : MonoBehaviour
     void Start()
     {
         _wateringCanTransform = GetComponent<Transform>();
+        _audioSource = GetComponent<AudioSource>();
     }
     void OnParticleCollision(GameObject other)
     {
@@ -36,6 +39,10 @@ public class WateringCan : MonoBehaviour
                 waterParticles.gameObject.SetActive(true);
                 waterParticles.Play();
                 _isWatering = true;
+                if (!_audioSource.isPlaying)
+                {
+                    _audioSource.Play();
+                }
             }
         }
         else
@@ -45,6 +52,10 @@ public class WateringCan : MonoBehaviour
                 waterParticles.Stop();
                 waterParticles.gameObject.SetActive(false);
                 _isWatering = false;
+                if (_audioSource.isPlaying)
+                {
+                    _audioSource.Stop();
+                }
             }
         }
     }

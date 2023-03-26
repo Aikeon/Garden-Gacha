@@ -29,6 +29,7 @@ public class Vegetable : MonoBehaviour
         if (detached) return;
         transform.SetParent(null);
         detached = true;
+        AudioManager.Instance.PlaySFX("harvest");
         origin.CollectedChild();
     }
 

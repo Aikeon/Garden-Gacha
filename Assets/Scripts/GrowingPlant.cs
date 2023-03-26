@@ -62,6 +62,7 @@ public class GrowingPlant : MonoBehaviour
         yield return new WaitForSeconds(data.vegGrowthTime);
         vegetable.SetActive(true);
         
+        AudioManager.Instance.PlaySFX("plantFinishedGrowing");
         ShowCollectablesVeggies();
         
         _anim.gameObject.SetActive(false);
@@ -69,6 +70,7 @@ public class GrowingPlant : MonoBehaviour
 
     private void ShowCollectablesVeggies()
     {
+        
         switch (veggiesToCollect)
         {
             case 3:
