@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.01449584, g: 0.6845724, b: 0.99121004, a: 1}
+  m_IndirectSpecularColor: {r: 0.00064361835, g: 0.024448631, b: 0.020936057, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 1c27f8c091dc04c44859b86c64d7f4a5, type: 2}
   m_LightingSettings: {fileID: 4890085278179872738, guid: 0e2d780cecae3c24bbdb358972f9053c, type: 2}
 --- !u!196 &4
 NavMeshSettings:
@@ -12927,6 +12927,7 @@ MonoBehaviour:
   moneyGainInNSecs: 0
   moneyGainIn30Secs: 0
   moneyGainIn60Secs: 0
+  autosaveOn: 0
 --- !u!4 &1602882553
 Transform:
   m_ObjectHideFlags: 0
@@ -12984,6 +12985,7 @@ MonoBehaviour:
       - moneyGainInNSecs
       - moneyGainIn30Secs
       - moneyGainIn60Secs
+      - autosaveOn
       variable: totalObtainedMoney
       valueCheck: 25
       conditionType: 2
@@ -13017,6 +13019,7 @@ MonoBehaviour:
       - moneyGainInNSecs
       - moneyGainIn30Secs
       - moneyGainIn60Secs
+      - autosaveOn
       variable: totalObtainedMoney
       valueCheck: 150
       conditionType: 2
@@ -13050,6 +13053,7 @@ MonoBehaviour:
       - moneyGainInNSecs
       - moneyGainIn30Secs
       - moneyGainIn60Secs
+      - autosaveOn
       variable: totalObtainedMoney
       valueCheck: 500
       conditionType: 2
@@ -13083,6 +13087,7 @@ MonoBehaviour:
       - moneyGainInNSecs
       - moneyGainIn30Secs
       - moneyGainIn60Secs
+      - autosaveOn
       variable: money
       valueCheck: 15
       conditionType: 2
@@ -13116,6 +13121,7 @@ MonoBehaviour:
       - moneyGainInNSecs
       - moneyGainIn30Secs
       - moneyGainIn60Secs
+      - autosaveOn
       variable: money
       valueCheck: 50
       conditionType: 2
@@ -13149,6 +13155,7 @@ MonoBehaviour:
       - moneyGainInNSecs
       - moneyGainIn30Secs
       - moneyGainIn60Secs
+      - autosaveOn
       variable: money
       valueCheck: 150
       conditionType: 2
@@ -13182,6 +13189,7 @@ MonoBehaviour:
       - moneyGainInNSecs
       - moneyGainIn30Secs
       - moneyGainIn60Secs
+      - autosaveOn
       variable: timeInGame
       valueCheck: 600
       conditionType: 2
@@ -13215,6 +13223,7 @@ MonoBehaviour:
       - moneyGainInNSecs
       - moneyGainIn30Secs
       - moneyGainIn60Secs
+      - autosaveOn
       variable: timeInGame
       valueCheck: 3600
       conditionType: 2
@@ -13248,6 +13257,7 @@ MonoBehaviour:
       - moneyGainInNSecs
       - moneyGainIn30Secs
       - moneyGainIn60Secs
+      - autosaveOn
       variable: timeInGame
       valueCheck: 14400
       conditionType: 2
@@ -13281,6 +13291,7 @@ MonoBehaviour:
       - moneyGainInNSecs
       - moneyGainIn30Secs
       - moneyGainIn60Secs
+      - autosaveOn
       variable: timeInGame
       valueCheck: 43200
       conditionType: 2
@@ -13314,6 +13325,7 @@ MonoBehaviour:
       - moneyGainInNSecs
       - moneyGainIn30Secs
       - moneyGainIn60Secs
+      - autosaveOn
       variable: totalVegCount
       valueCheck: 1
       conditionType: 2
@@ -13347,6 +13359,7 @@ MonoBehaviour:
       - moneyGainInNSecs
       - moneyGainIn30Secs
       - moneyGainIn60Secs
+      - autosaveOn
       variable: totalVegCount
       valueCheck: 10
       conditionType: 2
@@ -13380,6 +13393,7 @@ MonoBehaviour:
       - moneyGainInNSecs
       - moneyGainIn30Secs
       - moneyGainIn60Secs
+      - autosaveOn
       variable: totalVegCount
       valueCheck: 100
       conditionType: 2
@@ -13413,6 +13427,7 @@ MonoBehaviour:
       - moneyGainInNSecs
       - moneyGainIn30Secs
       - moneyGainIn60Secs
+      - autosaveOn
       variable: totalVegCount
       valueCheck: 1000
       conditionType: 2
@@ -13446,6 +13461,7 @@ MonoBehaviour:
       - moneyGainInNSecs
       - moneyGainIn30Secs
       - moneyGainIn60Secs
+      - autosaveOn
       variable: soldAil
       valueCheck: 5
       conditionType: 2
@@ -13474,6 +13490,7 @@ MonoBehaviour:
       - moneyGainInNSecs
       - moneyGainIn30Secs
       - moneyGainIn60Secs
+      - autosaveOn
       variable: soldCarrottes
       valueCheck: 5
       conditionType: 2
@@ -13502,6 +13519,7 @@ MonoBehaviour:
       - moneyGainInNSecs
       - moneyGainIn30Secs
       - moneyGainIn60Secs
+      - autosaveOn
       variable: soldChoux
       valueCheck: 5
       conditionType: 2
@@ -13530,6 +13548,7 @@ MonoBehaviour:
       - moneyGainInNSecs
       - moneyGainIn30Secs
       - moneyGainIn60Secs
+      - autosaveOn
       variable: soldHaricots
       valueCheck: 5
       conditionType: 2
@@ -13558,6 +13577,7 @@ MonoBehaviour:
       - moneyGainInNSecs
       - moneyGainIn30Secs
       - moneyGainIn60Secs
+      - autosaveOn
       variable: soldOignons
       valueCheck: 5
       conditionType: 2
@@ -13586,6 +13606,7 @@ MonoBehaviour:
       - moneyGainInNSecs
       - moneyGainIn30Secs
       - moneyGainIn60Secs
+      - autosaveOn
       variable: soldPoireaux
       valueCheck: 5
       conditionType: 2
@@ -13614,6 +13635,7 @@ MonoBehaviour:
       - moneyGainInNSecs
       - moneyGainIn30Secs
       - moneyGainIn60Secs
+      - autosaveOn
       variable: soldTomates
       valueCheck: 5
       conditionType: 2
@@ -13647,6 +13669,7 @@ MonoBehaviour:
       - moneyGainInNSecs
       - moneyGainIn30Secs
       - moneyGainIn60Secs
+      - autosaveOn
       variable: boughtBronze
       valueCheck: 5
       conditionType: 2
@@ -13680,6 +13703,7 @@ MonoBehaviour:
       - moneyGainInNSecs
       - moneyGainIn30Secs
       - moneyGainIn60Secs
+      - autosaveOn
       variable: boughtBronze
       valueCheck: 10
       conditionType: 2
@@ -13713,6 +13737,7 @@ MonoBehaviour:
       - moneyGainInNSecs
       - moneyGainIn30Secs
       - moneyGainIn60Secs
+      - autosaveOn
       variable: boughtBronze
       valueCheck: 25
       conditionType: 2
@@ -13746,6 +13771,7 @@ MonoBehaviour:
       - moneyGainInNSecs
       - moneyGainIn30Secs
       - moneyGainIn60Secs
+      - autosaveOn
       variable: boughtBronze
       valueCheck: 100
       conditionType: 2
@@ -13779,6 +13805,7 @@ MonoBehaviour:
       - moneyGainInNSecs
       - moneyGainIn30Secs
       - moneyGainIn60Secs
+      - autosaveOn
       variable: moneyGainIn60Secs
       valueCheck: 10
       conditionType: 2
@@ -13812,6 +13839,7 @@ MonoBehaviour:
       - moneyGainInNSecs
       - moneyGainIn30Secs
       - moneyGainIn60Secs
+      - autosaveOn
       variable: moneyGainIn30Secs
       valueCheck: 20
       conditionType: 2
@@ -13845,6 +13873,7 @@ MonoBehaviour:
       - moneyGainInNSecs
       - moneyGainIn30Secs
       - moneyGainIn60Secs
+      - autosaveOn
       variable: moneyGainIn30Secs
       valueCheck: 50
       conditionType: 2
