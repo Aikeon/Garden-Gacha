@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boosterPackPrefab: {fileID: 6372780501293548632, guid: 123a64c0156dbd743975dcf7b89356b8, type: 3}
-  rarity: 1
+  rarity: 0
 --- !u!1 &6795659989505999224
 GameObject:
   m_ObjectHideFlags: 0
@@ -84,7 +84,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: -69.553, y: 180, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -0, y: 0.3}
+  m_AnchoredPosition: {x: -0, y: 0.22}
   m_SizeDelta: {x: 1, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &7687935085084739797
