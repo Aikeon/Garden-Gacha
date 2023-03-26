@@ -190,6 +190,11 @@ public class GameManager : MonoBehaviour
 
         return save;
     }
+
+    public void Exit()
+    {
+        Application.Quit();
+    }
     
 }
 
