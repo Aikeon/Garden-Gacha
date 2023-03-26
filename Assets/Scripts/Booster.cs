@@ -67,20 +67,20 @@ public class Booster : MonoBehaviour
         {
             case Rarity.Bronze: 
                 price = 5;
-                left.GetComponent<Renderer>().material = sachetBronze;
-                right.GetComponent<Renderer>().material = sachetBronze;
+                left.transform.GetChild(0).GetComponent<Renderer>().material = sachetBronze;
+                right.transform.GetChild(0).GetComponent<Renderer>().material = sachetBronze;
                 middle.GetComponent<Renderer>().material = sachetBronze;
                 break;
             case Rarity.Silver: 
                 price = 10; 
-                left.GetComponent<Renderer>().material = sachetArgent;
-                right.GetComponent<Renderer>().material = sachetArgent;
+                left.transform.GetChild(0).GetComponent<Renderer>().material = sachetArgent;
+                right.transform.GetChild(0).GetComponent<Renderer>().material = sachetArgent;
                 middle.GetComponent<Renderer>().material = sachetArgent;
                 break;
             case Rarity.Gold: 
                 price = 25; 
-                left.GetComponent<Renderer>().material = sachetOr;
-                right.GetComponent<Renderer>().material = sachetOr;
+                left.transform.GetChild(0).GetComponent<Renderer>().material = sachetOr;
+                right.transform.GetChild(0).GetComponent<Renderer>().material = sachetOr;
                 middle.GetComponent<Renderer>().material = sachetOr;
                 break;
         }
@@ -90,6 +90,11 @@ public class Booster : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Vector3.Dot(left.transform.position - right.transform.position, left.transform.forward) > 0)
+        {
+            left.transform.GetChild(0).transform.localEulerAngles = Vector3.forward * 180;
+            right.transform.GetChild(0).transform.localEulerAngles = Vector3.forward * 180;
+        }
         left.enabled = (GameManager.Instance.money >= price) || purchased;
         right.enabled = (GameManager.Instance.money >= price) || purchased;
         leftVelocity = (left.transform.position - leftPrevPos) / Time.deltaTime;
@@ -202,8 +207,8 @@ public class Booster : MonoBehaviour
     public void SetMaterial()
     {
         if (graineIsKnown) return;
-        left.GetComponent<Renderer>().material = _choosenGraine.vegData.boosterMaterial;
-        right.GetComponent<Renderer>().material = _choosenGraine.vegData.boosterMaterial;
+        left.transform.GetChild(0).GetComponent<Renderer>().material = _choosenGraine.vegData.boosterMaterial;
+        right.transform.GetChild(0).GetComponent<Renderer>().material = _choosenGraine.vegData.boosterMaterial;
         middle.GetComponent<Renderer>().material = _choosenGraine.vegData.boosterMaterial;
         graineIsKnown = true;
     }
@@ -343,8 +348,8 @@ public class Booster : MonoBehaviour
 
     IEnumerator DespawnGarbage()
     {
-        var leftRend = left.GetComponent<Renderer>();
-        var rightRend = right.GetComponent<Renderer>();
+        var leftRend = left.transform.GetChild(0).GetComponent<Renderer>();
+        var rightRend = right.transform.GetChild(0).GetComponent<Renderer>();
         var timeEllapsed = 0f;
         while (timeEllapsed < 8f)
         {
