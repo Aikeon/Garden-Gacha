@@ -48,8 +48,7 @@ public class LockedDirt : MonoBehaviour
         _renderer.materials = newMaterials;
         topLight.gameObject.SetActive(true);
         
-        Destroy(priceDisplay.transform.parent.gameObject);
-        Destroy(GetComponent<XRGrabInteractable>());
-        Destroy(GetComponent<Rigidbody>());
+        Destroy(priceDisplay.transform.parent.parent.gameObject);
+
     }
 }

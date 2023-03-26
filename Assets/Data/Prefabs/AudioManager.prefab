@@ -172,7 +172,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -302,9 +302,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37f3ed33b3e3010409f59a75fe54ae8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  musics: []
+  musics:
+  - name: mainTheme
+    clip: {fileID: 8300000, guid: 49e28c9f301170c4a9386200d4b679a2, type: 3}
   sfx:
   - name: AchievementGet
     clip: {fileID: 8300000, guid: 2241707c89018cb40bee0c588ca8cafa, type: 3}
+  - name: moneyGain
+    clip: {fileID: 8300000, guid: 95560132077ba6346a07302ce4884231, type: 3}
+  - name: rippingSeedBag
+    clip: {fileID: 8300000, guid: 2d5b611c19748da498785794ede476f5, type: 3}
+  - name: plantSeed
+    clip: {fileID: 8300000, guid: 085d5f33e81d3d8489b7509b2d940e69, type: 3}
+  - name: growl
+    clip: {fileID: 8300000, guid: d8527b47f956c874ca1fa1c2a98a80f1, type: 3}
+  - name: hohoho
+    clip: {fileID: 8300000, guid: 4c891e52e84ad164dad20914debd1e94, type: 3}
+  - name: hohooooo
+    clip: {fileID: 8300000, guid: 665c1337a8f36f44f8ec2255c4e4a0d0, type: 3}
+  - name: bookPageTurn
+    clip: {fileID: 8300000, guid: 50325c8494b89d34d9b7353db34c09dd, type: 3}
+  - name: plantFinishedGrowing
+    clip: {fileID: 8300000, guid: 4a73a967f7f7a234495538ab89c5999a, type: 3}
+  - name: harvest
+    clip: {fileID: 8300000, guid: 10c532818131c374b84249de15d750af, type: 3}
   musicSource: {fileID: 2977910530333789973}
   sfxSource: {fileID: 2977910530266457757}
