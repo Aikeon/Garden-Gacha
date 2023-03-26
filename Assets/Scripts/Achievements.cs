@@ -1,8 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor;
-using UnityEngine.Events;
+using TMPro;
 
 public enum ConditionType
 {
@@ -114,6 +113,15 @@ public class Achievements : MonoBehaviour
     }
 
     public List<Achievement> achievements;
+    [SerializeField]
+    private CanvasGroup achievementPanel;
+    [SerializeField]
+    private TextMeshProUGUI txtname;
+    [SerializeField]
+    private TextMeshProUGUI txtbounty;
+    [SerializeField]
+    private float achievementShowTime = 5f;
+    
 
     //Update is called once per frame
     void Update()
@@ -136,6 +144,7 @@ public class Achievements : MonoBehaviour
                     achievement.done = b;
                     AudioManager.Instance.PlaySFX("AchievementGet");
                     GameManager.Instance.money += achievement.bounty;
+                    StartCoroutine(seeAchievement(achievement));
                 }
                 
             }
@@ -152,5 +161,48 @@ public class Achievements : MonoBehaviour
                 condition.OnValidate();
             }
         }
+    }
+
+    IEnumerator seeAchievement(Achievement a)
+    {
+        var timeEllapsed = 0f;
+        achievementPanel.transform.localScale = new Vector3(0,0.1f,1);
+        txtbounty.text = a.bounty + " $";
+        txtname.text = a.name;
+        achievementPanel.gameObject.SetActive(true);
+        while (timeEllapsed < 0.25f)
+        {
+            achievementPanel.transform.localScale = Vector3.Lerp(achievementPanel.transform.localScale, new Vector3(1,0.1f,1), timeEllapsed*4f);
+            timeEllapsed += Time.deltaTime;
+            yield return null;
+        }
+        achievementPanel.transform.localScale = new Vector3(1,0.1f,1);
+        timeEllapsed = 0;
+        while (timeEllapsed < 0.25f)
+        {
+            achievementPanel.transform.localScale = Vector3.Lerp(achievementPanel.transform.localScale, Vector3.one, timeEllapsed*4f);
+            timeEllapsed += Time.deltaTime;
+            yield return null;
+        }
+        timeEllapsed = 0;
+        achievementPanel.transform.localScale = Vector3.one;
+        yield return new WaitForSeconds(achievementShowTime);
+        while (timeEllapsed < 0.25f)
+        {
+            achievementPanel.transform.localScale = Vector3.Lerp(achievementPanel.transform.localScale, new Vector3(1,0.1f,1), timeEllapsed*4f);
+            timeEllapsed += Time.deltaTime;
+            yield return null;
+        }
+        achievementPanel.transform.localScale = new Vector3(1,0.1f,1);
+        timeEllapsed = 0;
+        while (timeEllapsed < 0.25f)
+        {
+            achievementPanel.transform.localScale = Vector3.Lerp(achievementPanel.transform.localScale, Vector3.zero, timeEllapsed*4f);
+            timeEllapsed += Time.deltaTime;
+            yield return null;
+        }
+        timeEllapsed = 0;
+        achievementPanel.transform.localScale = Vector3.zero;
+        achievementPanel.gameObject.SetActive(false);
     }
 }
