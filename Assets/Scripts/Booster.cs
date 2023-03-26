@@ -212,19 +212,12 @@ public class Booster : MonoBehaviour
         if (!purchased)
             switch (rarity)
             {
-                case Rarity.Bronze: TheGuyBehaviour.Instance.state = 1; break;
-                case Rarity.Silver: TheGuyBehaviour.Instance.state = 2; break;
-                case Rarity.Gold: TheGuyBehaviour.Instance.state = 3; break;
+                case Rarity.Bronze: TheGuyBehaviour.Instance.PlayDisapointed(); break;
+                case Rarity.Silver: TheGuyBehaviour.Instance.PlayOkay(); break;
+                case Rarity.Gold: TheGuyBehaviour.Instance.PlaySatisfied(); break;
             }
     }
-
-    public void StopHover()
-    {
-        if (!purchased)
-        {
-            TheGuyBehaviour.Instance.state = 0;
-        }
-    }
+    
 
     public void GrabLeft()
     {

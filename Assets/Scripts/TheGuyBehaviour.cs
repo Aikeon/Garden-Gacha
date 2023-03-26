@@ -5,12 +5,14 @@ using UnityEngine;
 public class TheGuyBehaviour : MonoBehaviour
 {
     public static TheGuyBehaviour Instance;
-    public int state;
     private float v;
     private Vector3 bEA;
     private Animator anim;
     private int latestState;
-    private string[] states = {"Idle", "Disappointed", "Okay", "Satisfied"};
+
+    [SerializeField] private Renderer rendererVAT;
+    public Material materialVAT;
+    public bool isAnim = false;
     void Awake()
     {
         if (Instance != null)
@@ -23,13 +25,35 @@ public class TheGuyBehaviour : MonoBehaviour
     void Start()
     {
         bEA = transform.eulerAngles;  
-        anim = GetComponent<Animator>(); 
+        anim = GetComponentInChildren<Animator>();
+        materialVAT = rendererVAT.material;
+    }
+
+
+    public void PlaySatisfied()
+    {
+        if(isAnim) return;
+        isAnim = true;
+        anim.CrossFade("Satisfied",0.2f);
+    }
+
+    public void PlayOkay()
+    {
+        if(isAnim) return;
+        isAnim = true;
+        anim.CrossFade("Okay",0.2f);
+    }
+    
+    public void PlayDisapointed()
+    {
+        if(isAnim) return;
+        isAnim = true;
+        anim.CrossFade("Disapointed",0.2f);
     }
 
     // Update is called once per frame
     void Update()
     {
-        anim.SetInteger("State",state);
         if (Vector3.Distance(transform.position, PlayerMovement.Instance.transform.position) < 3)
         {
             var curRot = transform.eulerAngles.y;
@@ -40,11 +64,9 @@ public class TheGuyBehaviour : MonoBehaviour
         {
             transform.eulerAngles = Vector3.Lerp(transform.eulerAngles, bEA, 0.03f);
         }
-        if (latestState != state)
-        {
-            var info = anim.GetCurrentAnimatorStateInfo(0);
-            anim.CrossFade(states[state],0f, -1, normalizedTimeOffset: (state == 3 || latestState == 3) ? 0 : info.normalizedTime);
-        }
-        latestState = state;
+        
+        if(Input.GetKey(KeyCode.I)) PlayDisapointed();
+        if(Input.GetKey(KeyCode.O)) PlayOkay();
+        if(Input.GetKey(KeyCode.P)) PlaySatisfied();
     }
 }
