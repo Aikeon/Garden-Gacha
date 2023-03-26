@@ -14,14 +14,13 @@ public class LockedDirt : MonoBehaviour
     [SerializeField] private TMP_Text priceDisplay;
     [SerializeField] private Light topLight;
     public bool unlocked = false;
-    private Renderer _renderer;
+    [SerializeField] private Renderer _renderer;
     public bool test = false;
 
     // Start is called before the first frame update
     void Start()
     {
         priceDisplay.text = price.ToString() + " $";
-        _renderer = GetComponent<Renderer>();
         topLight.gameObject.SetActive(false);
         if (isFirst)
         {
