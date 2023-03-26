@@ -2558,6 +2558,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2977910530333789973, guid: 3f2405e89b1702a46b7dff3d489fa860, type: 3}
+      propertyPath: m_Volume
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 2977910530633221590, guid: 3f2405e89b1702a46b7dff3d489fa860, type: 3}
       propertyPath: sfx.Array.size
       value: 10
