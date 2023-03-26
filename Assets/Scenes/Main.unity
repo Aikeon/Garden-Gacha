@@ -1353,6 +1353,33 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: faebdade52f6ceb48b8e7eabb8f2695a, type: 3}
+--- !u!114 &241625588 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3225300270869778628, guid: faebdade52f6ceb48b8e7eabb8f2695a, type: 3}
+  m_PrefabInstance: {fileID: 241625587}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &241625589 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3225300272074781756, guid: faebdade52f6ceb48b8e7eabb8f2695a, type: 3}
+  m_PrefabInstance: {fileID: 241625587}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!225 &241625590 stripped
+CanvasGroup:
+  m_CorrespondingSourceObject: {fileID: 3225300272691667224, guid: faebdade52f6ceb48b8e7eabb8f2695a, type: 3}
+  m_PrefabInstance: {fileID: 241625587}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &243623550
 GameObject:
   m_ObjectHideFlags: 0
@@ -14935,9 +14962,9 @@ MonoBehaviour:
       valueCheck: 50
       conditionType: 2
     done: 0
-  achievementPanel: {fileID: 0}
-  txtname: {fileID: 0}
-  txtbounty: {fileID: 0}
+  achievementPanel: {fileID: 241625590}
+  txtname: {fileID: 241625589}
+  txtbounty: {fileID: 241625588}
   achievementShowTime: 5
 --- !u!114 &1840250153
 MonoBehaviour:
