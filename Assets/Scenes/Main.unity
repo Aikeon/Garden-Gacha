@@ -7600,6 +7600,260 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 514269536}
   m_CullTransparentMesh: 1
+--- !u!1001 &549010004
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 602838777}
+    m_Modifications:
+    - target: {fileID: 1219991453934913742, guid: a108f560856041a448682e1b1bd2455e, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1219991453934913742, guid: a108f560856041a448682e1b1bd2455e, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1219991453934913742, guid: a108f560856041a448682e1b1bd2455e, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1219991453934913742, guid: a108f560856041a448682e1b1bd2455e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1777925645391909064, guid: a108f560856041a448682e1b1bd2455e, type: 3}
+      propertyPath: m_Name
+      value: Book With Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 1797507124074602090, guid: a108f560856041a448682e1b1bd2455e, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1797507124074602090, guid: a108f560856041a448682e1b1bd2455e, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1797507124074602090, guid: a108f560856041a448682e1b1bd2455e, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1797507124074602090, guid: a108f560856041a448682e1b1bd2455e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1988890964305364150, guid: a108f560856041a448682e1b1bd2455e, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1988890964305364150, guid: a108f560856041a448682e1b1bd2455e, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1988890964305364150, guid: a108f560856041a448682e1b1bd2455e, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1988890964305364150, guid: a108f560856041a448682e1b1bd2455e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2855013961454637478, guid: a108f560856041a448682e1b1bd2455e, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2855013961454637478, guid: a108f560856041a448682e1b1bd2455e, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2855013961454637478, guid: a108f560856041a448682e1b1bd2455e, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2855013961454637478, guid: a108f560856041a448682e1b1bd2455e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5260927938093703198, guid: a108f560856041a448682e1b1bd2455e, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5260927938093703198, guid: a108f560856041a448682e1b1bd2455e, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5260927938093703198, guid: a108f560856041a448682e1b1bd2455e, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5260927938093703198, guid: a108f560856041a448682e1b1bd2455e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6508080758685106563, guid: a108f560856041a448682e1b1bd2455e, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7443254145974997935, guid: a108f560856041a448682e1b1bd2455e, type: 3}
+      propertyPath: m_BlockingMask.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7920140106067212870, guid: a108f560856041a448682e1b1bd2455e, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7920140106067212870, guid: a108f560856041a448682e1b1bd2455e, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7920140106067212870, guid: a108f560856041a448682e1b1bd2455e, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7920140106067212870, guid: a108f560856041a448682e1b1bd2455e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8550544564272306410, guid: a108f560856041a448682e1b1bd2455e, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8550544564272306410, guid: a108f560856041a448682e1b1bd2455e, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8550544564272306410, guid: a108f560856041a448682e1b1bd2455e, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8550544564272306410, guid: a108f560856041a448682e1b1bd2455e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8696134725467200754, guid: a108f560856041a448682e1b1bd2455e, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8696134725467200754, guid: a108f560856041a448682e1b1bd2455e, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8696134725467200754, guid: a108f560856041a448682e1b1bd2455e, type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8696134725467200754, guid: a108f560856041a448682e1b1bd2455e, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8696134725467200754, guid: a108f560856041a448682e1b1bd2455e, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8696134725467200754, guid: a108f560856041a448682e1b1bd2455e, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8696134725467200754, guid: a108f560856041a448682e1b1bd2455e, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8696134725467200754, guid: a108f560856041a448682e1b1bd2455e, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8696134725467200754, guid: a108f560856041a448682e1b1bd2455e, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8696134725467200754, guid: a108f560856041a448682e1b1bd2455e, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 8696134725467200754, guid: a108f560856041a448682e1b1bd2455e, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 8696134725467200754, guid: a108f560856041a448682e1b1bd2455e, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 8696134725467200754, guid: a108f560856041a448682e1b1bd2455e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8696134725467200754, guid: a108f560856041a448682e1b1bd2455e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8696134725467200754, guid: a108f560856041a448682e1b1bd2455e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8696134725467200754, guid: a108f560856041a448682e1b1bd2455e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 8696134725467200754, guid: a108f560856041a448682e1b1bd2455e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8696134725467200754, guid: a108f560856041a448682e1b1bd2455e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 8696134725467200754, guid: a108f560856041a448682e1b1bd2455e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8696134725467200754, guid: a108f560856041a448682e1b1bd2455e, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 2.27
+      objectReference: {fileID: 0}
+    - target: {fileID: 8696134725467200754, guid: a108f560856041a448682e1b1bd2455e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.948
+      objectReference: {fileID: 0}
+    - target: {fileID: 8696134725467200754, guid: a108f560856041a448682e1b1bd2455e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8696134725467200754, guid: a108f560856041a448682e1b1bd2455e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 8696134725467200754, guid: a108f560856041a448682e1b1bd2455e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8696134725467200754, guid: a108f560856041a448682e1b1bd2455e, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9081471210948740205, guid: a108f560856041a448682e1b1bd2455e, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9081471210948740205, guid: a108f560856041a448682e1b1bd2455e, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9081471210948740205, guid: a108f560856041a448682e1b1bd2455e, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9081471210948740205, guid: a108f560856041a448682e1b1bd2455e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a108f560856041a448682e1b1bd2455e, type: 3}
+--- !u!224 &549010005 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 8696134725467200754, guid: a108f560856041a448682e1b1bd2455e, type: 3}
+  m_PrefabInstance: {fileID: 549010004}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &602838776
 GameObject:
   m_ObjectHideFlags: 0
@@ -7638,6 +7892,7 @@ Transform:
   - {fileID: 1646309670}
   - {fileID: 1482906586}
   - {fileID: 1634482327}
+  - {fileID: 549010005}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -12957,7 +13212,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   achievements:
   - name: "Un d\xE9but"
-    description: Gagnez 25$ au total.
+    description: Gagnez 25$ au total
     bounty: 15
     conditions:
     - scriptReference: {fileID: 1602882552}
@@ -12991,7 +13246,7 @@ MonoBehaviour:
       conditionType: 2
     done: 0
   - name: Devenir riche
-    description: Gagnez 150$ au total.
+    description: Gagnez 150$ au total
     bounty: 50
     conditions:
     - scriptReference: {fileID: 1602882552}
@@ -13025,7 +13280,7 @@ MonoBehaviour:
       conditionType: 2
     done: 0
   - name: Plus que riche !
-    description: Gagnez 500$ au total.
+    description: Gagnez 500$ au total
     bounty: 200
     conditions:
     - scriptReference: {fileID: 1602882552}
@@ -13059,7 +13314,7 @@ MonoBehaviour:
       conditionType: 2
     done: 0
   - name: Ma tirelire
-    description: Gardez 15$ sur vous.
+    description: Gardez 15$ sur vous
     bounty: 5
     conditions:
     - scriptReference: {fileID: 1602882552}
@@ -13093,7 +13348,7 @@ MonoBehaviour:
       conditionType: 2
     done: 0
   - name: Economies
-    description: Gardez 50$ sur vous.
+    description: Gardez 50$ sur vous
     bounty: 20
     conditions:
     - scriptReference: {fileID: 1602882552}
@@ -13127,7 +13382,7 @@ MonoBehaviour:
       conditionType: 2
     done: 0
   - name: Donnez-moi un livret A !
-    description: Gardez 150$ sur vous.
+    description: Gardez 150$ sur vous
     bounty: 50
     conditions:
     - scriptReference: {fileID: 1602882552}
@@ -13161,7 +13416,7 @@ MonoBehaviour:
       conditionType: 2
     done: 0
   - name: Hobby
-    description: Jouez 10 minutes.
+    description: Jouez 10 minutes
     bounty: 5
     conditions:
     - scriptReference: {fileID: 1602882552}
@@ -13195,7 +13450,7 @@ MonoBehaviour:
       conditionType: 2
     done: 0
   - name: "Job \xE9tudiant"
-    description: Jouez une heure.
+    description: Jouez une heure
     bounty: 25
     conditions:
     - scriptReference: {fileID: 1602882552}
@@ -13229,7 +13484,7 @@ MonoBehaviour:
       conditionType: 2
     done: 0
   - name: "Employ\xE9"
-    description: Jouez quatre heures.
+    description: Jouez quatre heures
     bounty: 100
     conditions:
     - scriptReference: {fileID: 1602882552}
@@ -13262,8 +13517,8 @@ MonoBehaviour:
       valueCheck: 14400
       conditionType: 2
     done: 0
-  - name: Tu es addict.
-    description: Jouez 12 heures.
+  - name: Tu es addict
+    description: Jouez 12 heures
     bounty: 100
     conditions:
     - scriptReference: {fileID: 1602882552}
@@ -13297,7 +13552,7 @@ MonoBehaviour:
       conditionType: 2
     done: 0
   - name: "Premi\xE8re vente"
-    description: Vendez un produit.
+    description: Vendez un produit
     bounty: 2
     conditions:
     - scriptReference: {fileID: 1602882552}
@@ -13331,7 +13586,7 @@ MonoBehaviour:
       conditionType: 2
     done: 0
   - name: Apprenti agriculteur
-    description: Vendez 10 produits.
+    description: Vendez 10 produits
     bounty: 10
     conditions:
     - scriptReference: {fileID: 1602882552}
@@ -13365,7 +13620,7 @@ MonoBehaviour:
       conditionType: 2
     done: 0
   - name: Vrai farmer
-    description: Vendez 100 produits.
+    description: Vendez 100 produits
     bounty: 50
     conditions:
     - scriptReference: {fileID: 1602882552}
@@ -13399,7 +13654,7 @@ MonoBehaviour:
       conditionType: 2
     done: 0
   - name: "Tout \xE7a, c'est bio ?"
-    description: Vendez 1000 produits.
+    description: Vendez 1000 produits
     bounty: 250
     conditions:
     - scriptReference: {fileID: 1602882552}
@@ -13433,7 +13688,7 @@ MonoBehaviour:
       conditionType: 2
     done: 0
   - name: "Diversit\xE9"
-    description: Vendez 5 de chaque produit.
+    description: Vendez 5 de chaque produit
     bounty: 30
     conditions:
     - scriptReference: {fileID: 1602882552}
@@ -13641,7 +13896,7 @@ MonoBehaviour:
       conditionType: 2
     done: 0
   - name: Bon, faut commencer...
-    description: Achetez 5 boosters de bronze.
+    description: Achetez 5 boosters de bronze
     bounty: 5
     conditions:
     - scriptReference: {fileID: 1602882552}
@@ -13675,7 +13930,7 @@ MonoBehaviour:
       conditionType: 2
     done: 0
   - name: "Tu peux acheter mieux que \xE7a..."
-    description: Achetez 10 boosters de bronze.
+    description: Achetez 10 boosters de bronze
     bounty: 5
     conditions:
     - scriptReference: {fileID: 1602882552}
@@ -13709,7 +13964,7 @@ MonoBehaviour:
       conditionType: 2
     done: 0
   - name: "Le vendeur n'a jamais \xE9t\xE9 si d\xE9\xE7u"
-    description: Achetez 25 boosters de bronze.
+    description: Achetez 25 boosters de bronze
     bounty: 10
     conditions:
     - scriptReference: {fileID: 1602882552}
@@ -13743,7 +13998,7 @@ MonoBehaviour:
       conditionType: 2
     done: 0
   - name: POURQUOI
-    description: Achetez 100 boosters de bronze.
+    description: Achetez 100 boosters de bronze
     bounty: 0
     conditions:
     - scriptReference: {fileID: 1602882552}
@@ -13777,7 +14032,7 @@ MonoBehaviour:
       conditionType: 2
     done: 0
   - name: Vendre *vite*
-    description: En 60 secondes, gagnez 10$.
+    description: En 60 secondes, gagnez 10$
     bounty: 10
     conditions:
     - scriptReference: {fileID: 1602882552}
@@ -13811,7 +14066,7 @@ MonoBehaviour:
       conditionType: 2
     done: 0
   - name: "Vendre *tr\xE8s vite*"
-    description: En 30 secondes, gagnez 20$.
+    description: En 30 secondes, gagnez 20$
     bounty: 25
     conditions:
     - scriptReference: {fileID: 1602882552}
@@ -13845,7 +14100,7 @@ MonoBehaviour:
       conditionType: 2
     done: 0
   - name: Le stock va pourrir...
-    description: En 30 secondes, gagnez 50$.
+    description: En 30 secondes, gagnez 50$
     bounty: 100
     conditions:
     - scriptReference: {fileID: 1602882552}
