@@ -34,6 +34,8 @@ public class GameManager : MonoBehaviour
     public float moneyGainIn60Secs;
     public bool autosaveOn;
 
+    private int destroySaveCount;
+
     void Awake()
     {
         if (Instance != null)
@@ -54,6 +56,7 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         timeInGame += Time.deltaTime;
+        if (Input.GetKeyDown(KeyCode.M)) DestroySave();
     }
 
     void OnApplicationQuit()
@@ -148,6 +151,19 @@ public class GameManager : MonoBehaviour
         else
         {
             Debug.Log("No game saved!");
+        }
+    }
+
+    public void DestroySave()
+    {
+        destroySaveCount++;
+        if (destroySaveCount >= 3)
+        {
+            if (File.Exists(Application.persistentDataPath + "/gamesave.save"))
+            {
+                File.Delete(Application.persistentDataPath + "/gamesave.save");
+            }
+            autosaveOn = false;
         }
     }
 
